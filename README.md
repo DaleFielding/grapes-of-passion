@@ -34,3 +34,55 @@ The strategy for this site is to include a wide range of features that users wou
 -   Some sites display ratings, awards, and offer features such as chat support, newsletters, and blogs.
 -   Footers include FAQs, delivery info, contact details, T&Cs, copyright, social links, and privacy policies.
 -   Site styles are mostly bright/white with contrasting colours for emphasis.
+
+Need to sort scope, have only copy and pasted it from Bonsay Bay, so far.
+
+### Scope
+
+I have listed the possible features below and ranked 1-5 in level of importance/relevance to user/business needs (1 being most important and viable/feasible):
+
+| Possible Feature                                                       | Rank |
+| ---------------------------------------------------------------------- | ---- |
+| Relational database                                                    | 1    |
+| Form/database validation                                               | 1    |
+| Site navigation                                                        | 1    |
+| Accessibility                                                          | 1    |
+| Device/resolution responsivity                                         | 1    |
+| Responses to user actions                                              | 1    |
+| Account login/registration and account/profile management              | 1    |
+| Authorisation, authentication and permission functionalities           | 1    |
+| Ability to create, update and delete listings (owners/superusers)      | 1    |
+| Location finding                                                       | 1    |
+| Available products structured in a grid                                | 1    |
+| Available events                                                       | 1    |
+| Details of products for sale including images                          | 1    |
+| Contact details                                                        | 1    |
+| Search function                                                        | 1    |
+| 404 page                                                               | 1    |
+| Logo                                                                   | 1    |
+| Ability to choose delivery address                                     | 1    |
+| Ability to add, edit and remove items from the shopping bag/cart       | 1    |
+| Method to process payments (test functionality only)                   | 1    |
+| Email confirmation of order                                            | 1    |
+| Various forms to pass information to the database                      | 1    |
+| Ability to sort products by price, name etc                            | 1    |
+| Ability to navigate by categories and subcategories                    | 1    |
+| Ability to view previous orders                                        | 2    |
+| Filters to refine search; such as price, wine type, country, grape etc | 2    |
+| Advertisements                                                         | 2    |
+| Background image(s)                                                    | 2    |
+| Social links                                                           | 2    |
+| Calendar to book events/reservations                                   | 2    |
+| Footer                                                                 | 2    |
+| Ability to view/rate products                                          | 3    |
+| Ability to save items as favourites/wish list                          | 4    |
+| Subscriptions/loyalty points                                           | 4    |
+| Contact form                                                           | 4    |
+| Blog                                                                   | 5    |
+
+As some of these features extend beyond the necessary requirements for the project and may take more time than appropriate, I will not currently be implementing:
+
+-   Ability to view/rate products
+-   Subscriptions/loyalty points
+-   Contact form
+-   Blog
