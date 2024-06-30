@@ -272,48 +272,74 @@ I have listed the pages below including the features they will contain.
 ![Entity Relationship Diagram](resources/entity-relationship-diagram.png)
 <br>
 
-#### Wireframes...To be added
+#### Wireframes
 
   <details><summary>Homepage</summary>
-    <img src="">
+
+![Homepage-top](resources/wireframes/homepage-top.png)
+![Homepage-bottom](resources/wireframes/homepage-bottom.png)
+
   </details>
 
   <details><summary>Product/Query Page</summary>
-    <img src="">
+
+![Product/query page](resources/wireframes/product-query-page.png)
+
   </details>
   
   <details><summary>Product Details Page</summary>
-    <img src="">
+
+![Product details page](resources/wireframes/product-details-page.png)
+
   </details>
 
   <details><summary>Wine Tasting Page</summary>
-    <img src="">
+
+![Wine tasting page top](resources/wireframes/wine-tasting-page-top.png)
+![Wine tasting page bottom](resources/wireframes/wine-tasting-page-bottom.png)
+
   </details>
 
   <details><summary>Cart Page</summary>
-    <img src="">
+
+![Cart page](resources/wireframes/cart-page.png)
+
   </details>
 
   <details><summary>Checkout page</summary>
-    <img src="">
+
+![Checkout page](resources/wireframes/checkout-page.png)
+
   </details>
 
   <details><summary>Register Page</summary>
-    <img src="">
+
+![Register page](resources/wireframes/register-page.png)
+
   </details>
 
   <details><summary>Sign In Page</summary>
-    <img src="">
+
+![Sign in page](resources/wireframes/sign-in-page.png)
+
   </details>
 
   <details><summary>Profile Page</summary>
-    <img src="">
+
+![Profile page](resources/wireframes/profile-page.png)
+
   </details>
 
-  <details><summary>Product Management Page</summary>
-    <img src="">
+  <details>
+    <summary>Product Management Page</summary>
+
+![Product-management-top](resources/wireframes/product-management-page-top.png)
+![Product-management-bottom](resources/wireframes/product-management-page-bottom.png)
+
   </details>
 
   <details><summary>404 Page</summary>
-    <img src="">
+
+![404 page](resources/wireframes/404-page.png)
+
   </details>
