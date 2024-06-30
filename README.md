@@ -267,9 +267,10 @@ I have listed the pages below including the features they will contain.
 
 ### Skeleton
 
-#### Table Schema...To be added
+#### Database Design
 
-![Table Schema]("")<br>
+![Entity Relationship Diagram](resources/entity-relationship-diagram.png)
+<br>
 
 #### Wireframes...To be added
 
