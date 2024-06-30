@@ -6,6 +6,55 @@ Website to be created for a fictional independent wine seller focused on enhanci
 
 ![Mockup for grapes of passion site...To be added]()
 
+## User Experience (UX)
+
+### User Stories
+
+#### _Viewing/Navigation and Searching_
+
+| #   | As a User I want to be able to...                         |
+| --- | --------------------------------------------------------- |
+| 1   | Navigate around the site by scrolling.                    |
+| 2   | Navigate through categories and subcategories.            |
+| 3   | View products.                                            |
+| 4   | View available offers.                                    |
+| 5   | Search for specific queries relating to products.         |
+| 6   | View imagery and relevant information about each product. |
+| 7   | See the total amount of products in my cart.              |
+| 8   | Filter to refine results for product/query.               |
+| 9   | Sort products depending on preference.                    |
+| 10  | View contact information and social media links.          |
+| 11  | Book dates for events and specify any requirements.       |
+
+#### _Checkout/Payment Processing_
+
+| #   | As a User I want to be able to...                                         |
+| --- | ------------------------------------------------------------------------- |
+| 12  | View the grand total and list of the products to check before purchasing. |
+| 13  | Remove/or adjust quantity of items in the bag.                            |
+| 14  | Trust my personal and payment information kept secret and secure.         |
+| 15  | Receive an email confirmation if checkout is succesful.                   |
+
+#### _Managing Accounts_
+
+| #   | As a User I want to be able to...               |
+| --- | ----------------------------------------------- |
+| 16  | Register for an account.                        |
+| 17  | Receive an email confirmation.                  |
+| 18  | Login and logout of my account.                 |
+| 19  | Recover password if forgotten.                  |
+| 20  | Add default delivery information in my profile. |
+| 21  | View my order history.                          |
+
+#### _Site Owners/Admins_
+
+| #   | As a Site Owner/Admin I want to be able to...                                 |
+| --- | ----------------------------------------------------------------------------- |
+| 22  | Create products to including relevant details to be stored within a database. |
+| 23  | View products displayed throughout the site.                                  |
+| 24  | Manage these products so I can update and delete.                             |
+| 25  | View a warning if deleting an item to prevent accidental deletions.           |
+
 ## Design
 
 ### Strategy
