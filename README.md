@@ -41,48 +41,229 @@ Need to sort scope, have only copy and pasted it from Bonsay Bay, so far.
 
 I have listed the possible features below and ranked 1-5 in level of importance/relevance to user/business needs (1 being most important and viable/feasible):
 
-| Possible Feature                                                       | Rank |
-| ---------------------------------------------------------------------- | ---- |
-| Relational database                                                    | 1    |
-| Form/database validation                                               | 1    |
-| Site navigation                                                        | 1    |
-| Accessibility                                                          | 1    |
-| Device/resolution responsivity                                         | 1    |
-| Responses to user actions                                              | 1    |
-| Account login/registration and account/profile management              | 1    |
-| Authorisation, authentication and permission functionalities           | 1    |
-| Ability to create, update and delete listings (owners/superusers)      | 1    |
-| Location finding                                                       | 1    |
-| Available products structured in a grid                                | 1    |
-| Available events                                                       | 1    |
-| Details of products for sale including images                          | 1    |
-| Contact details                                                        | 1    |
-| Search function                                                        | 1    |
-| 404 page                                                               | 1    |
-| Logo                                                                   | 1    |
-| Ability to choose delivery address                                     | 1    |
-| Ability to add, edit and remove items from the shopping bag/cart       | 1    |
-| Method to process payments (test functionality only)                   | 1    |
-| Email confirmation of order                                            | 1    |
-| Various forms to pass information to the database                      | 1    |
-| Ability to sort products by price, name etc                            | 1    |
-| Ability to navigate by categories and subcategories                    | 1    |
-| Ability to view previous orders                                        | 2    |
-| Filters to refine search; such as price, wine type, country, grape etc | 2    |
-| Advertisements                                                         | 2    |
-| Background image(s)                                                    | 2    |
-| Social links                                                           | 2    |
-| Calendar to book events/reservations                                   | 2    |
-| Footer                                                                 | 2    |
-| Ability to view/rate products                                          | 3    |
-| Ability to save items as favourites/wish list                          | 4    |
-| Subscriptions/loyalty points                                           | 4    |
-| Contact form                                                           | 4    |
-| Blog                                                                   | 5    |
+| Possible Feature                                                   | Rank |
+| ------------------------------------------------------------------ | ---- |
+| Relational database                                                | 1    |
+| Form/database validation                                           | 1    |
+| Site navigation                                                    | 1    |
+| Accessibility                                                      | 1    |
+| Device/resolution responsivity                                     | 1    |
+| Responses to user actions                                          | 1    |
+| Account login/registration and account/profile management          | 1    |
+| Authorisation, authentication and permission functionalities       | 1    |
+| Ability to create, update and delete listings (owners/superusers)  | 1    |
+| Available products                                                 | 1    |
+| Available Wine Tasting Events                                      | 1    |
+| Details of products for sale including images                      | 1    |
+| Contact details                                                    | 1    |
+| Search function                                                    | 1    |
+| 404 page                                                           | 1    |
+| Logo                                                               | 1    |
+| Ability to choose delivery address                                 | 1    |
+| Ability to add, edit and remove items from the shopping bag/cart   | 1    |
+| Method to process payments (test functionality only)               | 1    |
+| Email confirmation of order                                        | 1    |
+| Various forms to pass information to the database                  | 1    |
+| Ability to sort products by price, name etc                        | 1    |
+| Ability to navigate by categories and subcategories                | 1    |
+| Ability to view previous orders                                    | 2    |
+| Filters to refine search; such as price, style, country, grape etc | 2    |
+| Advertisements                                                     | 2    |
+| Background image(s)                                                | 2    |
+| Social links                                                       | 2    |
+| Datepicker to select wine tasting products                         | 2    |
+| Footer                                                             | 2    |
+| Location finding                                                   | 3    |
+| Breadcrumb Navigation                                              | 3    |
+| Ability to save items as favourites/wish list                      | 4    |
+| Ability to view/rate products                                      | 4    |
+| Subscriptions/loyalty points                                       | 4    |
+| Contact form                                                       | 4    |
+| Blog                                                               | 5    |
 
 As some of these features extend beyond the necessary requirements for the project and may take more time than appropriate, I will not currently be implementing:
 
--   Ability to view/rate products
--   Subscriptions/loyalty points
--   Contact form
--   Blog
+-   Location Finding.
+-   Breadcrumb Navigation.
+-   Ability to view/rate products.
+-   Ability to save items as favourites/wish list.
+-   Subscriptions/loyalty points.
+-   Contact form.
+-   Blog.
+
+### Structure
+
+I have listed the pages below including the features they will contain.
+
+#### All pages:
+
+-   Navbar:
+    -   Logo, clicking on this will reload the home page.
+    -   Search button that opens search bar below allowing users to search products.
+    -   Login/register/account button.
+    -   Cart button allowing users to view items in their cart.
+    -   Navigation by categories and sub categories:
+        -   Offers:
+        -   Wine:
+            -   Style.
+            -   Country.
+            -   Region.
+            -   Grape.
+        -   Fortified Wine:
+            -   Port.
+            -   Sherry.
+            -   Madiera.
+            -   Vermouth.
+        -   Wine Tasting
+-   Banner displaying free delivery criteria.
+-   Footer:
+    -   Social media links.
+    -   Contact information.
+    -   Categories for navigation (as above).
+    -   Logo.
+
+#### Homepage:
+
+-   Background image.
+-   Company name displayed on top of image (offset).
+-   Recommended wines section.
+-   Wine tasting section.
+-   Various offers section.
+
+#### Product/Query Page
+
+-   Product/Query displays as the title.
+-   Button to filter, with a link to clear these filters also.
+-   Button to sort by certain criteria.
+-   Products displayed:
+    -   Image.
+    -   A few product details.
+    -   Price.
+    -   Button to add to cart.
+    -   Ability to select quantity.
+-   Pagination with arrows to navigate next and previous.
+
+#### Product Details Page
+
+-   Product name displayed.
+-   Product image.
+-   More details displayed.
+-   Description of product.
+-   Price.
+-   Button to add to cart.
+-   Ability to select quantity.
+
+#### Wine Tasting Page
+
+-   Title = Wine Tasting Experience.
+-   Wine tasting products displayed:
+    -   Image.
+    -   Product Name.
+    -   Description.
+    -   Price.
+-   Form and datepicker, allowing user to book and experience.
+
+#### Cart Page
+
+-   Title = Cart.
+-   Display products that are in the cart.
+-   Include; product images, names, individual price and total price for the product.
+-   Functionality to amend quantity or remove product.
+-   Cart total, delivery costs and grandtotal.
+-   Button to proceed to secure check out.
+
+#### Checkout page
+
+-   Title = Checkout.
+-   Form for user to enter their name, email, delivery address, and card details for payment.
+-   Order summary; product name, image, qty and subtotal.
+-   Cart total, delivery costs and grand total.
+-   Button to complete order.
+-   Button to adjust bag.
+
+#### Register Page
+
+-   Title = Register.
+-   Form for user to enter; email address, confirm email, username, password, confirm password.
+-   Button to complete registration.
+-   Button to go back to login.
+
+#### Sign In Page
+
+-   Title = Sign in.
+-   Form for user to enter their; username/email and password.
+-   Link for 'Forgot password'.
+-   Remember Me checkbox.
+-   Button to sign in.
+-   Button to return to Home.
+
+#### Profile Page
+
+-   Title = Your Profile.
+-   Form to add default delivery information.
+-   Order History; Order no, date, order total, items.
+-   Button to update information.
+
+#### Product Management Page
+
+-   Title = Product management.
+-   Form including all necessary fields to complete relating to the product being added/edited.
+-   Button to add/edit product.
+-   Button to cancel.
+
+#### 404 Page
+
+-   Message displayed confirming user has tried to visit a page in the domain that does not exist.
+-   Link/button within the page content that will direct the user to the home page.
+
+### Skeleton
+
+#### Table Schema...To be added
+
+![Table Schema]("")<br>
+
+#### Wireframes...To be added
+
+  <details><summary>Homepage</summary>
+    <img src="">
+  </details>
+
+  <details><summary>Product/Query Page</summary>
+    <img src="">
+  </details>
+  
+  <details><summary>Product Details Page</summary>
+    <img src="">
+  </details>
+
+  <details><summary>Wine Tasting Page</summary>
+    <img src="">
+  </details>
+
+  <details><summary>Cart Page</summary>
+    <img src="">
+  </details>
+
+  <details><summary>Checkout page</summary>
+    <img src="">
+  </details>
+
+  <details><summary>Register Page</summary>
+    <img src="">
+  </details>
+
+  <details><summary>Sign In Page</summary>
+    <img src="">
+  </details>
+
+  <details><summary>Profile Page</summary>
+    <img src="">
+  </details>
+
+  <details><summary>Product Management Page</summary>
+    <img src="">
+  </details>
+
+  <details><summary>404 Page</summary>
+    <img src="">
+  </details>
