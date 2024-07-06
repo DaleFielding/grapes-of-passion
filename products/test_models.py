@@ -11,4 +11,4 @@ class CategoryModelTest(TestCase):
         )
         # Checking if category was created with the expected fields
         self.assertEqual(category.name, 'Expected name')
-        self.assertEqual(category.friendly_name,  5)
+        self.assertEqual(category.friendly_name, True)
