@@ -7,8 +7,8 @@ class CategoryModelTest(TestCase):
     def test_category_creation(self):
         category = Category.objects.create(
             name='Expected name',
-            friendly_name='Intentionally incorrect friendly name'
+            friendly_name='Expected friendly name'
         )
         # Checking if category was created with the expected fields
         self.assertEqual(category.name, 'Expected name')
-        self.assertEqual(category.friendly_name, 'Expected friendly name')
+        self.assertEqual(category.friendly_name,  5)
