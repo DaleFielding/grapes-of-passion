@@ -21,11 +21,11 @@ class ProductModelTest(TestCase):
 
     def test_product_creation(self):
         # Get category from fixtures
-        category = Category.objects.get(pk=6)
+        category = Category.objects.get(pk=1)
         # Create a product instance with the approproate fields
         product = Product.objects.create(
             category=category,
-            sku='12345',
+            sku='00000',
             name='Test Product',
             description='A product for testing purposes',
             price=9.99,
