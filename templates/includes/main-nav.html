@@ -21,7 +21,7 @@
                 <a href="" class="dropdown-item">Rosé</a>
                 <a href="" class="dropdown-item">Countries</a>
                 <a href="" class="dropdown-item">Grapes</a>
-                <a href="" class="dropdown-item">View All</a>
+                <a href="{% url 'products' %}?category_ids=1,2,3" class="dropdown-item">View All</a>
             </div>
         </li>
 
@@ -32,7 +32,7 @@
             <div class="dropdown-menu border-0" aria-labelledby="homeware-link">
                 <a href="" class="dropdown-item">Port</a>
                 <a href="" class="dropdown-item">Sherry</a>
-                <a href="" class="dropdown-item">View All</a>
+                <a href="{% url 'products'%}?category_ids=4,5" class="dropdown-item">View All</a>
             </div>
         </li>
 
