@@ -5,9 +5,14 @@ from .models import Product
 
 
 def all_products(request):
-    """ Show all products, including sorting and search queries """
+    """ 
+    Handle the display of all wine products,
+    including sorting and search queries 
+    """
     # Get all products and set query to None initially to prevent query error
-
+    # Print request.GET for debugging purposes
+    print(request.GET)
+    
     products = Product.objects.all()
     query = None
     # Check if a query searched.
@@ -26,6 +31,11 @@ def all_products(request):
         if 'category_ids' in request.GET:
             category_ids = request.GET['category_ids'].split(',')
             products = products.filter(category_id__in=category_ids)
+        # If the discounted parameter is in the get request,
+        # filter by including products that are not discounted
+        if 'discounted' in request.GET:
+            is_discounted = request.GET['discounted']
+            products = products.exclude(discounted_price__isnull=True)
 
     context = {
         'products': products,
