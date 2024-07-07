@@ -44,6 +44,10 @@ body {
     border: 1px solid black !important;
 }
 
+.bg-black {
+    background-color: #000 !important;
+}
+
 /* ----- MEDIA QUERIES ----- */
 
 @media (min-width: 1200px) {
@@ -63,5 +67,16 @@ body {
 
     .header-container {
         padding-top: 164px;
+    }
+}
+
+/* Add padding to the top when navbar on mobile */
+@media (max-width: 991px) {
+    .header-container {
+        padding-top: 116px;
+    }
+
+    body {
+        height: calc(100vh - 116px);
     }
 }
