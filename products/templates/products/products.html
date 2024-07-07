@@ -21,6 +21,7 @@
                 <div class="row mt-1 mb-2"></div>
                 <div class="row">
                     {% for product in products %}
+                        {% if product.category_id == 1 or product.category_id == 2 or product.category_id == 3 %}
                             <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                                 <div class="card h-100 border-0">
                                     {% if product.image %}
@@ -64,6 +65,7 @@
                                     <hr>
                                 </div>
                             {% endif %}
+                        {% endif %}
                     {% endfor %}
                 </div>
             </div>
