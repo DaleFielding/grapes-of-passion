@@ -28,7 +28,7 @@ class ProductModelTest(TestCase):
             sku='12345',
             name='Test Product',
             description='A product for testing purposes',
-            price="9.99",
+            price=9.99,
             discount=1.00,
             discounted_price=8.99,
             grape='Test Grape',
@@ -39,7 +39,7 @@ class ProductModelTest(TestCase):
             region_state='Test Region',
             style='Test Style',
             is_vegetarian=True,
-            is_vegan=None,
+            is_vegan=True,
             year=2020
         )
         # Asssertions to check if product was created with the expected fields
