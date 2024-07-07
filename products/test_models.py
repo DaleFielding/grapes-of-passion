@@ -25,10 +25,10 @@ class ProductModelTest(TestCase):
         # Create a product instance with the approproate fields
         product = Product.objects.create(
             category=category,
-            sku='00000',
+            sku='12345',
             name='Test Product',
             description='A product for testing purposes',
-            price=9.99,
+            price="9.99",
             discount=1.00,
             discounted_price=8.99,
             grape='Test Grape',
