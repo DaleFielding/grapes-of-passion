@@ -39,7 +39,7 @@ class ProductModelTest(TestCase):
             region_state='Test Region',
             style='Test Style',
             is_vegetarian=True,
-            is_vegan=True,
+            is_vegan=None,
             year=2020
         )
         # Asssertions to check if product was created with the expected fields
