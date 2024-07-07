@@ -16,9 +16,9 @@
                 Wine
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
-                <a href="" class="dropdown-item">Red</a>
-                <a href="" class="dropdown-item">White</a>
-                <a href="" class="dropdown-item">Rosé</a>
+                <a href="{% url 'products' %}?category_ids=1" class="dropdown-item">Red</a>
+                <a href="{% url 'products' %}?category_ids=2" class="dropdown-item">White</a>
+                <a href="{% url 'products' %}?category_ids=3" class="dropdown-item">Rosé</a>
                 <a href="" class="dropdown-item">Countries</a>
                 <a href="" class="dropdown-item">Grapes</a>
                 <a href="{% url 'products' %}?category_ids=1,2,3" class="dropdown-item">View All</a>
@@ -30,8 +30,8 @@
                 Fortified Wine
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="homeware-link">
-                <a href="" class="dropdown-item">Port</a>
-                <a href="" class="dropdown-item">Sherry</a>
+                <a href="{% url 'products' %}?category_ids=4" class="dropdown-item">Port</a>
+                <a href="{% url 'products' %}?category_ids=5" class="dropdown-item">Sherry</a>
                 <a href="{% url 'products'%}?category_ids=4,5" class="dropdown-item">View All</a>
             </div>
         </li>
