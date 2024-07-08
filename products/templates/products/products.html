@@ -14,13 +14,13 @@
             <div class="col text-center mt-3">
                 <h2 class="logo-font">
                     {% if search_term %}
-                        Results for "{{ search_term }}"
+                        Results for '{{ search_term|capfirst }}'
                     {% elif current_categories %}
                         {% for category in current_categories %}
                             {{ category.name|capfirst }}
                         {% endfor %}
                     {% elif is_discounted %}
-                        Discounted Products
+                        Discounted
                     {% else %}
                         All Wine
                     {% endif %}
