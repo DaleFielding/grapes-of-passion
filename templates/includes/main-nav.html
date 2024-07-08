@@ -16,10 +16,10 @@
                 Wine
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
-                <a href="{% url 'products' %}?category_ids=1" class="dropdown-item">Red</a>
-                <a href="{% url 'products' %}?category_ids=2" class="dropdown-item">White</a>
-                <a href="{% url 'products' %}?category_ids=3" class="dropdown-item">Rosé</a>
-                <a href="{% url 'products' %}?category_ids=1,2,3" class="dropdown-item">View All</a>
+                <a href="{% url 'products' %}?category=red" class="dropdown-item">Red</a>
+                <a href="{% url 'products' %}?category=white" class="dropdown-item">White</a>
+                <a href="{% url 'products' %}?category=rose" class="dropdown-item">Rosé</a>
+                <a href="{% url 'products' %}?category=all-wine" class="dropdown-item">View All</a>
             </div>
         </li>
 
@@ -28,9 +28,9 @@
                 Fortified Wine
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="homeware-link">
-                <a href="{% url 'products' %}?category_ids=4" class="dropdown-item">Port</a>
-                <a href="{% url 'products' %}?category_ids=5" class="dropdown-item">Sherry</a>
-                <a href="{% url 'products'%}?category_ids=4,5" class="dropdown-item">View All</a>
+                <a href="{% url 'products' %}?category=port" class="dropdown-item">Port</a>
+                <a href="{% url 'products' %}?category=sherry" class="dropdown-item">Sherry</a>
+                <a href="{% url 'products'%}?category=all-fortified-wine" class="dropdown-item">View All</a>
             </div>
         </li>
 
