@@ -17,7 +17,7 @@
                         Results for "{{ search_term }}"
                     {% elif current_categories %}
                         {% for category in current_categories %}
-                            {{ category.name }}
+                            {{ category.name|capfirst }}
                         {% endfor %}
                     {% elif is_discounted %}
                         Discounted Products
