@@ -15,6 +15,7 @@ def all_products(request):
     products = Product.objects.all()
     query = None
     categories = None
+    is_discounted = False
 
     # Mapping to group certain categories
     grouped_categories = {
@@ -57,6 +58,7 @@ def all_products(request):
         'products': products,
         'search_term': query,
         'current_categories': categories,
+        'is_discounted': is_discounted,
     }
 
     return render(request, 'products/products.html', context)
