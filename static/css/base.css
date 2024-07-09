@@ -48,6 +48,20 @@ body {
     background-color: #000 !important;
 }
 
+/* ----- BACK TO TOP LINK ----- */
+
+.btt-button {
+    height: 42px;
+    width: 42px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+
+.btt-link {
+    cursor: pointer;
+}
+
 /* ----- MEDIA QUERIES ----- */
 
 @media (min-width: 1200px) {
