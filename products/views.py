@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
 from django.db.models import Q
+from django.db.models.functions import Lower
 from .models import Product, Category
 
 
@@ -16,17 +17,35 @@ def all_products(request):
     query = None
     categories = None
     is_discounted = False
-    display_title = "No Products Found" 
+    display_title = "All Products" 
+    sort = None
+    direction = None
 
     # Mapping to group certain categories
     grouped_categories = {
         'all-wine': ['red', 'white', 'rose'],
         'all-fortified-wine': ['port', 'sherry']
     }
-# When get request contains 'category', filter products by category.
+# When get request contains certain values.
+# Sort products by name or category, and handle sort direction.
 # Handle grouped categories if specified in query parameters
 # Then assign intended title to display_title
     if request.GET:
+        if 'sort' in request.GET:
+            sortkey = request.GET['sort']
+            sort = sortkey
+            if sortkey == 'name':
+                sortkey = 'lower_name'
+                products = products.annotate(lower_name=Lower('name'))
+
+            if sortkey == 'category':
+                sortkey = 'category__name'
+            if 'direction' in request.GET:
+                direction = request.GET['direction']
+                if direction == 'desc':
+                    sortkey = f'-{sortkey}'
+            products = products.order_by(sortkey)
+
         if 'category' in request.GET:
             category = request.GET['category']
             if category in grouped_categories:
@@ -61,6 +80,9 @@ def all_products(request):
             products = products.exclude(discounted_price__isnull=True)
             display_title = "Discounted Products"  
 
+    # assign f string containing sort and direction to current_sorting
+    current_sorting = f'{sort}_{direction}'
+
     # context variables to be passed to the template
     context = {
         'products': products,
@@ -68,6 +90,7 @@ def all_products(request):
         'current_categories': categories,
         'is_discounted': is_discounted,
         'display_title': display_title,
+        'current_sorting': current_sorting,
     }
 
     return render(request, 'products/products.html', context)
