@@ -78,7 +78,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 # further added
-                'bag.contexts.bag_contents',
+                'basket.contexts.basket_contents',
                 
             ],
         },
