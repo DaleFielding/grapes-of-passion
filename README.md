@@ -20,7 +20,7 @@ Website to be created for a fictional independent wine seller focused on enhanci
 | 4   | View available offers.                                    |
 | 5   | Search for specific queries relating to products.         |
 | 6   | View imagery and relevant information about each product. |
-| 7   | See the total amount of products in my cart.              |
+| 7   | See the total amount of products in my basket.            |
 | 8   | Filter to refine results for product/query.               |
 | 9   | Sort products depending on preference.                    |
 | 10  | View contact information and social media links.          |
@@ -31,7 +31,7 @@ Website to be created for a fictional independent wine seller focused on enhanci
 | #   | As a Shopper I want to be able to...                                      |
 | --- | ------------------------------------------------------------------------- |
 | 12  | View the grand total and list of the products to check before purchasing. |
-| 13  | Remove/or adjust quantity of items in the bag.                            |
+| 13  | Remove/or adjust quantity of items in the basket.                         |
 | 14  | Trust my personal and payment information kept secret and secure.         |
 | 15  | Receive an email confirmation if checkout is succesful.                   |
 
@@ -71,12 +71,12 @@ The strategy for this site is to include a wide range of features that users wou
 
 #### General Findings:
 
--   Logos are typically in the top left, with a search function and cart icon in the top right.
+-   Logos are typically in the top left, with a search function and basket icon in the top right.
 -   Navigation includes dropdown menus for categories such as; Offers, Wine, Mixed Cases, Champagne & Sparkling, Subscriptions/Clubs, Gifts, About/About Us, Contact info, Events, and Reservations. These expand into subcategories.
 -   Eye-catching background images or videos are common.
 -   Incentives/offers are frequently displayed.
 -   Products and categories are presented in grids and buttons further down the pages.
--   Clicking on the products will direct to a product details page, providing more information and option to add to cart/basket.
+-   Clicking on the products will direct to a product details page, providing more information and option to add to basket.
 -   Viewing basket/checking out contains total, subtotal, delivery information and payment options.
 -   When searching or selecting categories, further options are presented to filter/organise the displayed products.
 -   Selecting events/reservations will inform users of dates and/or allow them to select available dates through a calendar/booking system.
@@ -109,7 +109,7 @@ I have listed the possible features below and ranked 1-5 in level of importance/
 | 404 page                                                           | 1    |
 | Logo                                                               | 1    |
 | Ability to choose delivery address                                 | 1    |
-| Ability to add, edit and remove items from the shopping bag/cart   | 1    |
+| Ability to add, edit and remove items from the shopping basket     | 1    |
 | Method to process payments (test functionality only)               | 1    |
 | Email confirmation of order                                        | 1    |
 | Various forms to pass information to the database                  | 1    |
@@ -150,7 +150,7 @@ I have listed the pages below including the features they will contain.
     -   Logo, clicking on this will reload the home page.
     -   Search button that opens search bar below allowing users to search products.
     -   Login/register/account button.
-    -   Cart button allowing users to view items in their cart.
+    -   Basket button allowing users to view items in their basket.
     -   Navigation by categories and sub categories:
         -   Offers:
         -   Wine:
@@ -188,7 +188,7 @@ I have listed the pages below including the features they will contain.
     -   Image.
     -   A few product details.
     -   Price.
-    -   Button to add to cart.
+    -   Button to add to basket.
     -   Ability to select quantity.
 -   Pagination with arrows to navigate next and previous.
 
@@ -199,7 +199,7 @@ I have listed the pages below including the features they will contain.
 -   More details displayed.
 -   Description of product.
 -   Price.
--   Button to add to cart.
+-   Button to add to basket.
 -   Ability to select quantity.
 
 #### Wine Tasting Page
@@ -212,13 +212,13 @@ I have listed the pages below including the features they will contain.
     -   Price.
 -   Form and datepicker, allowing user to book and experience.
 
-#### Cart Page
+#### Basket Page
 
--   Title = Cart.
--   Display products that are in the cart.
+-   Title = Basket.
+-   Display products that are in the basket.
 -   Include; product images, names, individual price and total price for the product.
 -   Functionality to amend quantity or remove product.
--   Cart total, delivery costs and grandtotal.
+-   Basket total, delivery costs and grandtotal.
 -   Button to proceed to secure check out.
 
 #### Checkout page
@@ -226,9 +226,9 @@ I have listed the pages below including the features they will contain.
 -   Title = Checkout.
 -   Form for user to enter their name, email, delivery address, and card details for payment.
 -   Order summary; product name, image, qty and subtotal.
--   Cart total, delivery costs and grand total.
+-   Basket total, delivery costs and grand total.
 -   Button to complete order.
--   Button to adjust bag.
+-   Button to adjust basket.
 
 #### Register Page
 
@@ -300,9 +300,9 @@ I have listed the pages below including the features they will contain.
 
   </details>
 
-  <details><summary>Cart Page</summary>
+  <details><summary>Basket Page</summary>
 
-![Cart page](resources/wireframes/cart-page.png)
+![Basket page](resources/wireframes/basket-page.png)
 
   </details>
 
