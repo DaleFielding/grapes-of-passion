@@ -79,6 +79,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 # further added
                 'basket.contexts.basket_contents',
+                'django.template.context_processors.media'
                 
             ],
         },
