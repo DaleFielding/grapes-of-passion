@@ -58,7 +58,11 @@ body {
     right: 10px;
 }
 
-.btt-link {
+/* ----- Cursor Pointer ----- */
+
+.btt-link,
+.update-link,
+.remove-item {
     cursor: pointer;
 }
 
