@@ -122,7 +122,7 @@
 <script type="text/javascript">
     // Click event to update quantity
     $('.update-link').click(function(e) {
-        let form = $(this).prev('.update-form');
+        let form = $(this).closest('.update-form');
         form.submit();
     })
 
