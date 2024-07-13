@@ -172,3 +172,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CSRF_TRUSTED_ORIGINS = [
     'https://8000-dalefieldin-grapesofpas-c7sa90tsxvm.ws.codeinstitute-ide.net'
     ]
+
+# Other
+APPEND_SLASH = True
