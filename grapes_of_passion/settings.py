@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
-     # Required for allauth:
+    # Required for allauth:
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     'products',
     'basket',
     'checkout',
+    # Other
+    'crispy_forms',
 
     
 ]
@@ -62,6 +64,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'grapes_of_passion.urls'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 TEMPLATES = [
     {
