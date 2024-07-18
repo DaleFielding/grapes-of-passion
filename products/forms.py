@@ -1,4 +1,5 @@
 from django import forms
+from .widgets import CustomClearableFileInput
 from .models import Product, Category
 
 
@@ -10,6 +11,9 @@ class ProductForm(forms.ModelForm):
     class Meta:
         model = Product
         fields = '__all__'
+
+    # Defines an optional image upload field with a custom file input widget.
+    image = forms.ImageField(label='Image', required=False, widget=CustomClearableFileInput)
 
     # Sets the category field choices to the list with the friendly names
     # Applies custom css class and custom label for region state
