@@ -2,7 +2,7 @@ from django import forms
 from .models import Product, Category
 
 
-# ---------- PRODUCT FORM: ADMIN ----------
+# PRODUCT FORM - ADMIN 
 class ProductForm(forms.ModelForm):
     """
     Django Form for the Product model to set category choices and custom styling.

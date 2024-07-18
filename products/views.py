@@ -7,7 +7,7 @@ from .models import Product, Category
 from .forms import ProductForm
 
 
-# ---------- ALL PRODUCTS ---------- 
+# ALL PRODUCTS
 def all_products(request):
     """ 
     Handle the display of all wine products,
@@ -98,7 +98,8 @@ def all_products(request):
     return render(request, 'products/products.html', context)
 
 
-# ---------- PRODUCT DETAIL ---------- 
+
+# PRODUCT DETAIL
 def product_detail(request, product_id):
     """ A view to show individual product details """
     product = get_object_or_404(Product, pk=product_id)
@@ -108,17 +109,16 @@ def product_detail(request, product_id):
     return render(request, 'products/product_detail.html', context)
 
 
-# ---------- ADD PRODUCT: ADMIN ----------
+# ADD PRODUCT - ADMIN
 def add_product(request):
-    """ Add a product to the admin store """
-
-    # Handle form submission and feedback through messaging
+    """ Add a product to the admin store, 
+    Handle form submission and feedback through messaging """
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            product = form.save()
             messages.success(request, 'Successfully added product!')
-            return redirect(reverse('add_product'))
+            return redirect(reverse('product_detail', args=[product.id]))
         else:
             messages.error(request, 'Failed to add product. Please ensure the form is valid.')
     else:
@@ -133,7 +133,7 @@ def add_product(request):
 
 
 
-# ---------- EDIT PRODUCT: ADMIN ----------
+# EDIT PRODUCT - ADMIN
 def edit_product(request, product_id):
     """ Edit an existing product in the store """
     product = get_object_or_404(Product, pk=product_id)
@@ -156,3 +156,12 @@ def edit_product(request, product_id):
     }
 
     return render(request, template, context)
+
+
+# DELETE PRODUCT - ADMIN
+def delete_product(request, product_id):
+    """ Delete a product from the store """
+    product = get_object_or_404(Product, pk=product_id)
+    product.delete()
+    messages.success(request, 'Product deleted!')
+    return redirect(reverse('products'))
