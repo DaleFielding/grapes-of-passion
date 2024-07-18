@@ -1,0 +1,1 @@
+web: gunicorn grapes_of_passion.wsgi:application

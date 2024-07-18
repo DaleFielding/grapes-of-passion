@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 import os
+import dj_database_url
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -26,7 +27,9 @@ SECRET_KEY = 'django-insecure-rq%6a3nq=5-91%-$ly9%co&(r!_i&ontrd(4xssdt%gaj1*8*!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-dalefieldin-grapesofpas-c7sa90tsxvm.ws.codeinstitute-ide.net']
+ALLOWED_HOSTS = ['8000-dalefieldin-grapesofpas-c7sa90tsxvm.ws.codeinstitute-ide.net',
+'https://grapes-of-passion-37a9373e50d5.herokuapp.com', 
+'localhost']
 
 
 # Application definition
@@ -123,13 +126,17 @@ WSGI_APPLICATION = 'grapes_of_passion.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
+else: 
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -187,6 +194,11 @@ DEFAULT_FROM_EMAIL = 'grapesofpassion@example.com'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# To prevent 500 errors during login on a deployed site you need to make a one line addition to your settings file.
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+
 
 # Trusted Origins
 CSRF_TRUSTED_ORIGINS = [
