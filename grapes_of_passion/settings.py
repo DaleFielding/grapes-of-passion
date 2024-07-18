@@ -27,8 +27,8 @@ SECRET_KEY = 'django-insecure-rq%6a3nq=5-91%-$ly9%co&(r!_i&ontrd(4xssdt%gaj1*8*!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-dalefieldin-grapesofpas-c7sa90tsxvm.ws.codeinstitute-ide.net',
-'https://grapes-of-passion-37a9373e50d5.herokuapp.com', 
+ALLOWED_HOSTS = ['grapes-of-passion-37a9373e50d5.herokuapp.com',
+'8000-dalefieldin-grapesofpas-c7sa90tsxvm.ws.codeinstitute-ide.net',
 'localhost']
 
 
