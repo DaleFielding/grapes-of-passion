@@ -45,11 +45,13 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    # Created
     'home',
     'products',
     'basket',
     'checkout',
     'profiles',
+    'wine_tasting',
     # Other
     'crispy_forms',
     'storages'
