@@ -274,7 +274,7 @@ input[name="q"]::placeholder {
 /* Smaller Devices */
 @media (max-width: 991px) {
     .header-container {
-        padding-top: 116px;
+        padding-top: 94px;
     }
 
     body {
