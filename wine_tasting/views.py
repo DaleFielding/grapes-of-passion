@@ -8,7 +8,7 @@ def wine_tasting(request):
     if request.method == 'POST':
         form = WineTastingForm(request.POST)
         if form.is_valid():
-            print(form.cleaned_data)
+            form.save() 
             return redirect('wine_tasting')  
     else:
         form = WineTastingForm()
