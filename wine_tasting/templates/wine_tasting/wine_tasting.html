@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% load static %}
-
 {% block extra_css %}
 {% endblock %}
 
@@ -41,10 +40,71 @@
             <div class="col-12 col-md-6 text-right order-md-1 p-3">
                 <h3>Couples Wine Tasting</h3>
                 <br>
-                <p>Enjoy a special evening with your partner at our couples' wine tasting. Discover a selection of fine wines as our experts guide you through the nuances of tasting and identifying unique flavours and aromas. In a cosy, intimate setting, savour each glass and enjoy quality time together, making lasting memories in a relaxed and charming atmosphere.
-                </p>
+                <p>Enjoy a special evening with your partner at our couples' wine tasting. Discover a selection of fine wines as our experts guide you through the nuances of tasting and identifying unique flavours and aromas. In a cosy, intimate setting, savour each glass and enjoy quality time together, making lasting memories in a relaxed and charming atmosphere.</p>
             </div>
-            
+        </div>
+        <hr>
+    </div>
+
+    <!-- Wine Tasting Booking Form -->
+    <div class="container mt-3">
+        <h3 class="py-3">Select Your Experience</h3>
+        <div class="col-12 col-lg-6">
+            <form class="mt-3" action="{% url 'wine_tasting' %}" method="POST" id="wine-tasting-form">
+                {% csrf_token %}
+                <!-- Experiences Field -->
+                <div class="form-group">
+                    <select name="experience" class="form-control border-black rounded-0 profile-form-input">
+                        {% for value, label in form.experience.field.choices %}
+                            <option value="{{ value }}" {% if form.experience.value == value %}selected{% endif %}>{{ label }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <!-- Contact Number Field -->
+                <div class="form-group">
+                    <label>Contact Number</label>
+                    <input type="text" name="contact_number" class="form-control border-black rounded-0 profile-form-input" placeholder="Enter contact number" />
+                </div>
+
+                <!-- Special Requirements Field -->
+                <div class="form-group">
+                    <label>Any Special Requirements?</label>
+                    <textarea name="special_requirements" rows="4" class="form-control border-black rounded-0 profile-form-input" placeholder="Dietary, accessibility, etc."></textarea>
+                </div>
+
+                <!-- Date Field -->
+                <div class="form-group">
+                    <label>Select Date</label>
+                    <input type="text" name="date" class="form-control datepicker border-black rounded-0 profile-form-input" placeholder="-Select Date-" />
+                </div>
+
+                <!-- Quantity Field with Custom Buttons -->
+                <div class="form-group">
+                    <label>Number of People</label>
+                    <div class="d-flex align-items-center">
+                        <div class="input-group-prepend">
+                            <button type="button" class="decrement-qty btn btn-black rounded-0">
+                                <span class="icon">
+                                    <i class="fas fa-minus"></i>
+                                </span>
+                            </button>
+                        </div>
+                        <input type="number" name="quantity" min="1" value="1" class="form-control border-black rounded-0 profile-form-input qty_input" />
+                        <div class="input-group-append">
+                            <button type="button" class="increment-qty btn btn-black rounded-0">
+                                <span class="icon">
+                                    <i class="fas fa-plus"></i>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-black rounded-0 text-uppercase float-right">Add to Basket</button>
+
+
+            </form>
         </div>
     </div>
 {% endblock %}
