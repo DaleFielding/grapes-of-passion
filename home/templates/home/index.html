@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'home/css/home.css' %}">
+{% endblock %}
+
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
@@ -10,16 +14,15 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container h-100">
-        <div class="row h-100">
-            <div class="col-7 col-md-6 my-auto">
-                <h1 class="display-4 logo-font text-black">
-                    Grapes of Passion
-                </h1>
-                <div class="my-5">
-                    <h4>
-                        Scroll to Explore
-                    </h4>
+    <!-- Background Image Container -->
+    <div class="bg-container">
+        <div class="container-fluid h-100">
+            <div class="row h-100 text-white">
+                <div class="col-7 col-md-6 mt-5 mx-0 text-center">
+                    <h1 class="display-4 logo-font">Grapes of <br>Passion</h1>
+                    <div class="my-3">
+                        <h4>Scroll to Explore</h4>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,0 +1,8 @@
+.bg-container {
+    background-image: url("/media/main-bg-wine-image.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    min-height: 80%;
+}
