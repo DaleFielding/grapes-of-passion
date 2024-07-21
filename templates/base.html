@@ -19,7 +19,12 @@
     {% endblock %}
 
     {% block extra_css %}
+    <!-- Flatpickr --> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <!-- Google fonts --> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     {% endblock %}
 
     {% block corejs %}
@@ -60,10 +65,10 @@
                   </form>
               </div>
               <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-                  <ul class="list-inline list-unstyled text-center text-lg-right my-0">
+                  <ul class="list-inline list-unstyled text-center text-lg-right my-0 ">
                       <li class="list-inline-item dropdown">
-                          <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              <div class="text-center">
+                          <a  class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              <div class="text-center" id="nav-font">
                                   <div><i class="fas fa-user fa-lg"></i></div>
                                   <p class="my-0">My Account</p>
                               </div>

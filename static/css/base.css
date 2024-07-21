@@ -11,6 +11,26 @@ body {
     font-family: "Lato";
 }
 
+/* ----- Fonts ----- */
+:root {
+    --header-font: "Playfair Display", "Times New Roman", Times, serif;
+    --general-font: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+}
+
+* {
+    font-family: var(--general-font);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--header-font);
+    font-weight: 500;
+}
+
 /* ----- from Bulma ----- */
 .icon {
     align-items: center;
