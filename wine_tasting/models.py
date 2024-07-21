@@ -9,3 +9,15 @@ class WineTastingProduct(models.Model):
 
     def __str__(self):
         return self.product_name
+
+
+class WineTastingBooking(models.Model):
+    wine_tasting_product = models.ForeignKey(WineTastingProduct, on_delete=models.CASCADE)
+    special_requirements = models.TextField(null=True)
+    number_of_people = models.IntegerField()
+    contact_number = models.CharField(max_length=25, null=False)
+    selected_date = models.DateTimeField()
+
+    def __str__(self):
+        return f"{self.wine_tasting_product.product_name} booking"
+    
