@@ -183,10 +183,9 @@
                 12 Cold Harbour Lane <br />
                 Bristol, BS12 7SB <br />
                 <a
-                    class="animate-click"
                     href="https://www.google.com/maps/place/Coldharbour+Ln,+Stoke+Gifford,+Bristol/@51.5013624,-2.5492263,17z/data=!3m1!4b1!4m10!1m2!2m1!1scold+harbour+lane+bristol!3m6!1s0x48719033c7ca9d8b:0xe951e08af5dd4b21!8m2!3d51.5013592!4d-2.5443554!15sChljb2xkIGhhcmJvdXIgbGFuZSBicmlzdG9skgEFcm91dGXgAQA!16s%2Fg%2F1tg34nw5?entry=ttu"
                     target="_blank"
-                    ><i class="fa-solid fa-location-dot"></i>
+                    ><i class="fa-solid fa-location-dot animate-click"></i>
                     <span class="sr-only">Location</span>
                 </a>
                 <br />
@@ -199,9 +198,8 @@
                         href="https://www.facebook.com/"
                         target="_blank"
                         aria-label="Facebook"
-                        class="animate-click"
                         >
-                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                        <i class="fa fa-facebook animate-click" aria-hidden="true"></i>
                         <span class="sr-only">Facebook</span>
                         </a>
                     </li>
@@ -210,9 +208,8 @@
                         href="https://twitter.com/"
                         target="_blank"
                         aria-label="Twitter"
-                        class="animate-click"
                         >
-                        <i class="fa-brands fa-x-twitter"></i>
+                        <i class="fa-brands fa-x-twitter animate-click"></i>
                         <span class="sr-only">Twitter</span>
                         </a>
                     </li>
@@ -221,9 +218,8 @@
                         href="https://www.instagram.com/"
                         target="_blank"
                         aria-label="Instagram"
-                        class="animate-click"
                         >
-                        <i class="fa fa-instagram pl-3" aria-hidden="true"></i>
+                        <i class="fa fa-instagram pl-3 animate-click" aria-hidden="true"></i>
                         <span class="sr-only">Instagram</span>
                         </a>
                     </li>
@@ -232,10 +228,8 @@
         <!--- Logo and copyright -->
         <div class="col-12 col-md-4 d-flex align-items-center justify-content-center">
             <div class="row">
-                <div class="col-12 d-flex justify-content-center p-5">
-                    <a href="{% url 'home' %}" class="nav-link main-logo-link p-0">
-                        <img src="{{ MEDIA_URL }}logo.png" alt="Logo" class="invert-colours footer-logo">
-                    </a>
+                <div class="col-12 d-flex justify-content-center p-3">
+                    <img src="{{ MEDIA_URL }}logo.png" alt="Logo" class="invert-colours footer-logo" style="height: 100px; width: auto;"> 
                 </div>
                 <div class="col-12">
                     <p class="heading-font footer-heading m-0"><small>copyright 2024 &#169;</small></p>
@@ -246,17 +240,17 @@
         <div class="col-12 col-md-4 d-flex align-items-center justify-content-center">
             <ul
                 class="uppercase heading-font list-unstyled m-0">
-                <li class="p-1">
-                    <a href="#"> Offers </a>
-                </li>
-                <li class="p-1">
+                <li class="p-1 animate-click">
                     <a href="{% url 'products' %}?category=all-wine"> Wine </a>
                 </li>
-                <li class="p-1">
+                <li class="p-1 animate-click">
                     <a href="{% url 'products'%}?category=all-fortified-wine"> Fortified Wine </a>
                 </li>
-                <li class="p-1">
+                <li class="p-1 animate-click">
                     <a href="{% url 'wine_tasting' %}"> Wine Tasting </a>
+                </li>
+                <li class="p-1 animate-click">
+                    <a href="{% url 'home' %}">Home</a>
                 </li>
             </ul>
         </div>

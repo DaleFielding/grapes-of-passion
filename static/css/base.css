@@ -248,6 +248,22 @@ input[name="q"]::placeholder {
     border-radius: 0;
 }
 
+/* Footer */
+#footer-details a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Animate buttons/links */
+.animate-click:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+
+.animate-click:active {
+    transform: scale(0.9);
+}
+
 /* ----- MEDIA QUERIES ----- */
 
 @media (min-width: 1200px) {
