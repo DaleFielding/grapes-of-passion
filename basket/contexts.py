@@ -3,7 +3,6 @@ from django.conf import settings
 from django.shortcuts import get_object_or_404
 from products.models import Product
 
-
 def basket_contents(request):
     """
     Return basket contents and totals for use in all templates
@@ -13,9 +12,14 @@ def basket_contents(request):
     product_count = 0
     basket = request.session.get('basket', {})
 
+    wine_items = []
+    wine_categories = ['red', 'white', 'rose']
+
     for item_id, item_data in basket.items():
         if isinstance(item_data, int):
             product = get_object_or_404(Product, pk=item_id)
+            if product.category.name.lower() in wine_categories:
+                wine_items.extend([product] * item_data)
             total += item_data * product.price
             product_count += item_data
             basket_items.append({
@@ -25,6 +29,15 @@ def basket_contents(request):
             })
         else:
             product = get_object_or_404(Product, pk=item_id)
+
+    # 5 for 4 wine bottles for 4 calculation
+    discount = 0
+    while len(wine_items) >= 5:
+        wine_items_sorted = sorted(wine_items, key=lambda item: item.price)
+        discount += wine_items_sorted[0].price
+        wine_items = wine_items[5:] 
+
+    total -= discount
 
     if total < settings.FREE_DELIVERY_THRESHOLD:
         delivery = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)
@@ -43,6 +56,7 @@ def basket_contents(request):
         'free_delivery_delta': free_delivery_delta,
         'free_delivery_threshold': settings.FREE_DELIVERY_THRESHOLD,
         'grand_total': grand_total,
+        'discount': discount, 
     }
 
     return context
