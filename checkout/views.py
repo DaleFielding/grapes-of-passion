@@ -60,10 +60,13 @@ def checkout(request):
             current_basket = basket_contents(request)
             discount = current_basket.get('discount', 0)
             order.discount = discount
-            total = current_basket['grand_total']
+            total = current_basket['total']
+            delivery_cost = current_basket['delivery']
+            grand_total = total - discount + delivery_cost
+
             order.order_total = total
-            order.delivery_cost = current_basket['delivery']
-            order.grand_total = total - discount + order.delivery_cost
+            order.delivery_cost = delivery_cost
+            order.grand_total = grand_total
 
             order.save()
 
@@ -97,8 +100,11 @@ def checkout(request):
             return redirect(reverse('products'))
 
         current_basket = basket_contents(request)
-        total = current_basket['grand_total']
-        stripe_total = round(total * 100)
+        total = current_basket['total']
+        discount = current_basket.get('discount', 0)
+        delivery_cost = current_basket['delivery']
+        grand_total = total - discount + delivery_cost
+        stripe_total = round(grand_total * 100)
         stripe.api_key = stripe_secret_key
         intent = stripe.PaymentIntent.create(
             amount=stripe_total,

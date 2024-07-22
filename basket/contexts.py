@@ -30,14 +30,12 @@ def basket_contents(request):
         else:
             product = get_object_or_404(Product, pk=item_id)
 
-    # 5 for 4 wine bottles for 4 calculation
+    # 5 for 4 wine bottles discount calculation
     discount = 0
     while len(wine_items) >= 5:
         wine_items_sorted = sorted(wine_items, key=lambda item: item.price)
         discount += wine_items_sorted[0].price
         wine_items = wine_items[5:] 
-
-    total -= discount
 
     if total < settings.FREE_DELIVERY_THRESHOLD:
         delivery = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)
@@ -46,7 +44,7 @@ def basket_contents(request):
         delivery = 0
         free_delivery_delta = 0
     
-    grand_total = delivery + total
+    grand_total = total - discount + delivery
     
     context = {
         'basket_items': basket_items,
