@@ -55,7 +55,18 @@ def checkout(request):
             pid = request.POST.get('client_secret').split('_secret')[0]
             order.stripe_pid = pid
             order.original_basket = json.dumps(basket)
+            
+            # Calculations to apply discount + update totals in the order
+            current_basket = basket_contents(request)
+            discount = current_basket.get('discount', 0)
+            order.discount = discount
+            total = current_basket['grand_total']
+            order.order_total = total
+            order.delivery_cost = current_basket['delivery']
+            order.grand_total = total - discount + order.delivery_cost
+
             order.save()
+
             for item_id, item_data in basket.items():
                 try:
                     product = Product.objects.get(id=item_id)
