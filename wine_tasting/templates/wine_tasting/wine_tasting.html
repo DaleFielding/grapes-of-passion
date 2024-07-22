@@ -122,18 +122,27 @@
         const quantityInput = document.querySelector('.qty_input');
         const decrementBtn = document.querySelector('.decrement-qty');
         const incrementBtn = document.querySelector('.increment-qty');
+        let datepickerInstance;
 
-        // Updates the datepicker based on selected experience
+        // Updates and enables/disables datepicker based on selected experience
         function updateDatepicker() {
             const selectedExperience = experienceField.value;
             if (dates[selectedExperience]) {
-                flatpickr(dateField, {
+                if (datepickerInstance) {
+                    datepickerInstance.destroy();
+                }
+                datepickerInstance = flatpickr(dateField, {
                     enable: dates[selectedExperience].map(date => date.trim())
                 });
+                dateField.disabled = false;
             } else {
-                flatpickr(dateField, {
+                if (datepickerInstance) {
+                    datepickerInstance.destroy();
+                }
+                datepickerInstance = flatpickr(dateField, {
                     enable: []
                 });
+                dateField.disabled = true;
             }
         }
 
@@ -172,6 +181,8 @@
         experienceField.addEventListener('change', function() {
             updateDatepicker();
             updateQuantity();
+            // Set date input to empty string when experience changes
+            dateField.value = '';
         });
 
         // Click event listener for decrement button
