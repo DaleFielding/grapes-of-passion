@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="row center-all mt-5 mb-2">
+    <h4 class="col-12 text-center">Sorry, page doesn't exist</h4>
+  </div>
+  <!-- 404 Image -->
+  <div class="row justify-content-center">
+    <div class="col-12 col-sm-8 col-md-6">
+      <img
+        src="{{ MEDIA_URL }}404.png" alt="404 image"
+        alt="image to display a 404 error"
+        class="img-fluid"
+      />
+    </div>
+  </div>
+  <!-- Homepage button -->
+  <div class="row justify-content-center mt-4">
+    <div class="col-10 col-md-8 col-lg-6">
+      <a
+        class="btn btn-secondary btn-lg animate-click"
+        href="{% url 'home' %}"
+      >
+        Go to homepage
+      </a>
+    </div>
+  </div>
+{% endblock %}
