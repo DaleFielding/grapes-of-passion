@@ -181,6 +181,15 @@
 
                     <div class="row">
                         <div class="col-12 col-md-4">
+                            <p class="mb-0 text-black font-weight-bold">Discount</p>
+                        </div>
+                        <div class="col-12 col-md-8 text-md-right">
+                            <p class="mb-0">-{{ order.discount }}</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12 col-md-4">
                             <p class="mb-0 text-black font-weight-bold">Grand Total</p>
                         </div>
                         <div class="col-12 col-md-8 text-md-right">
@@ -200,7 +209,7 @@
                     <span class="text-uppercase">Back to Profile</span>
                 </a>
             {% else %}
-                <a href="{% url 'products' %}?category=new_arrivals,deals,clearance" class="btn btn-black rounded-0 my-2">
+                <a href="{% url 'products' %}" class="btn btn-black rounded-0 my-2">
                     <span class="icon mr-2">
 						<i class="fas fa-chevron-left"></i>
 					</span>
