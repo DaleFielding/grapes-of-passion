@@ -92,7 +92,7 @@
                                 </span>
                             </button>
                         </div>
-                        <input type="number" name="quantity" min="1" value="1" class="form-control border-black rounded-0 profile-form-input qty_input" />
+                        <input type="number" name="quantity" class="form-control border-black rounded-0 profile-form-input qty_input" />
                         <div class="input-group-append">
                             <button type="button" class="increment-qty btn btn-black rounded-0">
                                 <span class="icon">
@@ -114,10 +114,16 @@
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
+        // Variables
         const dates = {{ dates_json|safe }};
+        const experiencesInfo = {{ experiences_info_json|safe }};
         const experienceField = document.querySelector('select[name="experience"]');
         const dateField = document.querySelector('.datepicker');
+        const quantityInput = document.querySelector('.qty_input');
+        const decrementBtn = document.querySelector('.decrement-qty');
+        const incrementBtn = document.querySelector('.increment-qty');
 
+        // Updates the datepicker based on selected experience
         function updateDatepicker() {
             const selectedExperience = experienceField.value;
             if (dates[selectedExperience]) {
@@ -131,22 +137,65 @@
             }
         }
 
-        experienceField.addEventListener('change', updateDatepicker);
-        updateDatepicker(); 
+        // Updates the quantity input field based on chosen experience
+        function updateQuantity() {
+            const selectedExperience = experienceField.value;
+            const experienceInfo = experiencesInfo[selectedExperience];
 
-        document.querySelector('.decrement-qty').addEventListener('click', function() {
-            const qtyInput = document.querySelector('.qty_input');
-            let currentValue = parseInt(qtyInput.value);
-            if (currentValue > 1) {
-                qtyInput.value = currentValue - 1;
+            if (experienceInfo) {
+                const minQuantity = experienceInfo.min_quantity;
+                const maxQuantity = experienceInfo.max_quantity;
+
+                // Set quantity input limits and values
+                quantityInput.min = minQuantity;
+                quantityInput.max = maxQuantity;
+                quantityInput.value = minQuantity;
+
+                // Enable/Disable buttons based on quantity value
+                decrementBtn.disabled = quantityInput.value <= minQuantity;
+                incrementBtn.disabled = quantityInput.value >= maxQuantity;
+                quantityInput.disabled = false;
+            } else {
+                // Disables quantity input and buttons if no experience is selected
+                quantityInput.value = '';
+                decrementBtn.disabled = true;
+                incrementBtn.disabled = true;
+                quantityInput.disabled = true;
+            }
+        }
+
+        // Initial setup for datepicker and quantity input
+        updateDatepicker();
+        updateQuantity();
+
+        // Listens for experience field change to update datepicker and quantity input
+        experienceField.addEventListener('change', function() {
+            updateDatepicker();
+            updateQuantity();
+        });
+
+        // Click event listener for decrement button
+        decrementBtn.addEventListener('click', function() {
+            let currentValue = parseInt(quantityInput.value);
+            if (currentValue > parseInt(quantityInput.min)) {
+                quantityInput.value = currentValue - 1;
+                decrementBtn.disabled = quantityInput.value <= parseInt(quantityInput.min);
+                incrementBtn.disabled = quantityInput.value >= parseInt(quantityInput.max);
             }
         });
 
-        document.querySelector('.increment-qty').addEventListener('click', function() {
-            const qtyInput = document.querySelector('.qty_input');
-            let currentValue = parseInt(qtyInput.value);
-            qtyInput.value = currentValue + 1;
+        // Click event listener for increment button
+        incrementBtn.addEventListener('click', function() {
+            let currentValue = parseInt(quantityInput.value);
+            if (currentValue < parseInt(quantityInput.max)) {
+                quantityInput.value = currentValue + 1;
+                decrementBtn.disabled = quantityInput.value <= parseInt(quantityInput.min);
+                incrementBtn.disabled = quantityInput.value >= parseInt(quantityInput.max);
+            }
         });
     });
 </script>
 {% endblock %}
+
+
+
