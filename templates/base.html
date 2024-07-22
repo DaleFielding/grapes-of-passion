@@ -150,10 +150,25 @@
 
     {% block postloadjs %}
     <script type="text/javascript">
+        // Toast
         $('.toast').toast('show');
+        // Scroll to offers
+        document.addEventListener('DOMContentLoaded', function() {
+            const dealsLink = document.getElementById('deals-link');
+            
+            dealsLink.addEventListener('click', function(event) {
+                event.preventDefault();
+                const atHomepage = window.location.pathname === "{% url 'home' %}";
+                if (atHomepage) {
+                    const target = document.getElementById('scroll-to-offers');
+                    target.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    window.location.href = "{% url 'home' %}#scroll-to-offers";
+                }
+            });
+        });
     </script>
     {% endblock %}
-
 
   </body>
     <!-- Footer -->
