@@ -21,7 +21,7 @@ class Product(models.Model):
     description = models.TextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
     discount = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
-    discounted_price = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
+    original_price = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
     grape = models.CharField(max_length=100, null=True, blank=True)
     country = models.CharField(max_length=100, null=True, blank=True)
     unit_volume = models.DecimalField(max_digits=5, decimal_places=1, null=True, blank=True)

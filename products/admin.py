@@ -8,7 +8,7 @@ class ProductAdmin(admin.ModelAdmin):
         'name',
         'category',
         'price',
-        'discounted_price',
+        'original_price',
         'discount',
         'image',
     )
