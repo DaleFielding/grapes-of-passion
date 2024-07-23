@@ -80,7 +80,7 @@ def all_products(request):
         # Then assign intended title to display_title
         if 'discounted' in request.GET:
             is_discounted = True
-            products = products.exclude(discounted_price__isnull=True)
+            products = products.exclude(original_price__isnull=True)
             display_title = "Discounted Products"  
 
     # assign f string containing sort and direction to current_sorting
