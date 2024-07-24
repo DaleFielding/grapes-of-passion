@@ -19,6 +19,7 @@ class WineTastingBooking(models.Model):
     number_of_people = models.IntegerField()
     contact_number = models.CharField(max_length=25, null=False)
     selected_date = models.DateTimeField()
+    total_price = models.DecimalField(max_digits=6, decimal_places=2)  
 
     def __str__(self):
         return f"{self.wine_tasting_product.product_name} booking"
