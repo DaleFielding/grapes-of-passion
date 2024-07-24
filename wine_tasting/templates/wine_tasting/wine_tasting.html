@@ -76,13 +76,9 @@
                     <input type="text" name="date" class="form-control datepicker border-black rounded-0 profile-form-input" placeholder="-Select Date-" />
                 </div>
 
-                <!-- Price Field -->
-                <div id="price-field">
-                    <p>Price <small>(per person)</small>: £{{ price }}</p>
-                </div>
 
                 <!-- Quantity Field with Custom Buttons -->
-                <div class="form-group">
+                <div class="form-group pb-3">
                     <label>Number of People</label>
                     <div class="d-flex align-items-center">
                         <div class="input-group-prepend">
@@ -102,8 +98,19 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Price Field -->
+                <div id="price-field">
+                    <p>Price <small>(per person)</small>: £<span id="price">{{ price }}</span></p>
+                </div>
+
+                <!-- Total Price Field -->
+                <div class="form-group">
+                    <p>Total Price: £<span id="total-price">0</span></p>
+                </div>
+
                 <div class="d-flex justify-content-end">
-                    <button type="submit" class="btn btn-black rounded-0 text-uppercase">Add to Basket</button>
+                    <button type="submit" class="btn btn-black rounded-0 text-uppercase">Confirm Reservation</button>
                 </div>
             </form>
         </div>
@@ -122,6 +129,8 @@
         const quantityInput = document.querySelector('.qty_input');
         const decrementBtn = document.querySelector('.decrement-qty');
         const incrementBtn = document.querySelector('.increment-qty');
+        const priceField = document.getElementById('price');
+        const totalPriceField = document.getElementById('total-price');
         let datepickerInstance;
 
         // Updates and enables/disables datepicker based on selected experience
@@ -164,13 +173,27 @@
                 decrementBtn.disabled = quantityInput.value <= minQuantity;
                 incrementBtn.disabled = quantityInput.value >= maxQuantity;
                 quantityInput.disabled = false;
+                
+                // Update total price
+                updateTotalPrice();
             } else {
                 // Disables quantity input and buttons if no experience is selected
                 quantityInput.value = '';
                 decrementBtn.disabled = true;
                 incrementBtn.disabled = true;
                 quantityInput.disabled = true;
+                
+                // Reset total
+                totalPriceField.innerText = '0';
             }
+        }
+
+        // Update total based on quantity and price
+        function updateTotalPrice() {
+            const price = parseFloat(priceField.innerText);
+            const quantity = parseInt(quantityInput.value);
+            const totalPrice = price * quantity;
+            totalPriceField.innerText = totalPrice.toFixed(2);
         }
 
         // Initial setup for datepicker and quantity input
@@ -192,6 +215,7 @@
                 quantityInput.value = currentValue - 1;
                 decrementBtn.disabled = quantityInput.value <= parseInt(quantityInput.min);
                 incrementBtn.disabled = quantityInput.value >= parseInt(quantityInput.max);
+                updateTotalPrice();
             }
         });
 
@@ -202,11 +226,9 @@
                 quantityInput.value = currentValue + 1;
                 decrementBtn.disabled = quantityInput.value <= parseInt(quantityInput.min);
                 incrementBtn.disabled = quantityInput.value >= parseInt(quantityInput.max);
+                updateTotalPrice();
             }
         });
     });
 </script>
 {% endblock %}
-
-
-
