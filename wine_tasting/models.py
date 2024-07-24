@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 class WineTastingProduct(models.Model):
     product_name = models.CharField(max_length=100, null=False)
@@ -12,6 +13,7 @@ class WineTastingProduct(models.Model):
 
 
 class WineTastingBooking(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
     wine_tasting_product = models.ForeignKey(WineTastingProduct, on_delete=models.CASCADE)
     special_requirements = models.TextField(null=True)
     number_of_people = models.IntegerField()

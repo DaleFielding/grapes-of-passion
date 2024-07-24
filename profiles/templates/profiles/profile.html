@@ -33,6 +33,7 @@
                     <button class="btn btn-black rounded-0 text-uppercase float-right">Update Information</button>
                 </form>
             </div>
+            <!-- Order history -->
             <div class="col-12 col-lg-6">
                 <p class="text-muted">Order History</p>
                 <div class="order-history table-responsive">
@@ -69,6 +70,38 @@
                             {% endfor %}
                         </tbody>
                     </table>
+                </div>
+            </div>
+            <!-- Wine Tasting Bookings -->
+            <div class="col-12 col-lg-6">
+                <p class="text-muted">Wine Tasting Bookings</p>
+                <div class="order-history table-responsive">
+                    {% if bookings %}
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Experience</th>
+                                    <th>Date</th>
+                                    <th>Contact Number</th>
+                                    <th>Number of People</th>
+                                    <th>Special Requirements</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for booking in bookings %}
+                                <tr>
+                                    <td>{{ booking.wine_tasting_product.product_name }}</td>
+                                    <td>{{ booking.selected_date }}</td>
+                                    <td>{{ booking.contact_number }}</td>
+                                    <td>{{ booking.number_of_people }}</td>
+                                    <td>{{ booking.special_requirements }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    {% else %}
+                        <p>You have no bookings for wine tasting currently.</p>
+                    {% endif %}
                 </div>
             </div>
         </div>

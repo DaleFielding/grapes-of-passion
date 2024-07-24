@@ -1,17 +1,27 @@
 from django.shortcuts import render, redirect
-from .models import WineTastingProduct
+from django.contrib import messages
+from .models import WineTastingProduct, WineTastingBooking
 from .forms import WineTastingForm
+from django.contrib.auth.decorators import login_required
 import json
 
 
 def wine_tasting(request):
     if request.method == 'POST':
+        if not request.user.is_authenticated:
+            request.session['form_data'] = request.POST
+            return redirect('account_login') 
+
         form = WineTastingForm(request.POST)
         if form.is_valid():
-            form.save() 
-            return redirect('wine_tasting')  
+            booking = form.save(commit=False)
+            booking.user = request.user
+            booking.save()
+            messages.success(request, 'Booking was successful, please pay on the day you arrive.')
+            return redirect('wine_tasting')
     else:
-        form = WineTastingForm()
+        form_data = request.session.pop('form_data', None)
+        form = WineTastingForm(form_data)
 
     wine_tastings = WineTastingProduct.objects.all()
     dates_dict = {str(product.id): product.dates.split(',') for product in wine_tastings}
