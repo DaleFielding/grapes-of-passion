@@ -4,17 +4,19 @@ from django.contrib.auth.decorators import login_required
 from .models import UserProfile
 from .forms import UserProfileForm
 from wine_tasting.models import WineTastingBooking
-
 from checkout.models import Order
-
+from datetime import datetime
 
 # PROFILE
 @login_required
 def profile(request):
     """ Display the user's profile. """
     profile = get_object_or_404(UserProfile, user=request.user)
-
     bookings = WineTastingBooking.objects.filter(user=request.user)
+    # Added to adjust time displayed
+    for booking in bookings:
+        if booking.selected_date.time() == datetime.min.time():
+            booking.selected_date = booking.selected_date.replace(hour=19, minute=0)
 
     if request.method == 'POST':
         form = UserProfileForm(request.POST, instance=profile)
