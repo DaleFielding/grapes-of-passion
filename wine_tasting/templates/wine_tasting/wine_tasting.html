@@ -51,32 +51,31 @@
                 {% csrf_token %}
                 <!-- Experiences Field -->
                 <div class="form-group">
-                    <select name="experience" class="form-control border-black rounded-0 profile-form-input">
-                        {% for value, label in form.experience.field.choices %}
-                            <option value="{{ value }}" {% if form.experience.value == value %}selected{% endif %}>{{ label }}</option>
+                    <select name="wine_tasting_product" class="form-control border-black rounded-0 profile-form-input">
+                        {% for value, label in form.wine_tasting_product.field.choices %}
+                            <option value="{{ value }}" {% if form.wine_tasting_product.value == value %}selected{% endif %}>{{ label }}</option>
                         {% endfor %}
                     </select>
                 </div>
-
+            
                 <!-- Contact Number Field -->
                 <div class="form-group">
                     <label>Contact Number</label>
                     <input type="text" name="contact_number" class="form-control border-black rounded-0 profile-form-input" placeholder="Enter contact number" />
                 </div>
-
+            
                 <!-- Special Requirements Field -->
                 <div class="form-group">
                     <label>Any Special Requirements?</label>
                     <textarea name="special_requirements" rows="4" class="form-control border-black rounded-0 profile-form-input" placeholder="Dietary, accessibility, etc."></textarea>
                 </div>
-
+            
                 <!-- Date Field -->
                 <div class="form-group">
                     <label>Select Date</label>
-                    <input type="text" name="date" class="form-control datepicker border-black rounded-0 profile-form-input" placeholder="-Select Date-" />
+                    <input type="text" name="selected_date" class="form-control datepicker border-black rounded-0 profile-form-input" placeholder="-Select Date-" />
                 </div>
-
-
+            
                 <!-- Quantity Field with Custom Buttons -->
                 <div class="form-group pb-3">
                     <label>Number of People</label>
@@ -88,7 +87,7 @@
                                 </span>
                             </button>
                         </div>
-                        <input type="number" name="quantity" class="form-control border-black rounded-0 profile-form-input qty_input" />
+                        <input type="number" name="number_of_people" class="form-control border-black rounded-0 profile-form-input qty_input" />
                         <div class="input-group-append">
                             <button type="button" class="increment-qty btn btn-black rounded-0">
                                 <span class="icon">
@@ -98,17 +97,17 @@
                         </div>
                     </div>
                 </div>
-
+            
                 <!-- Price Field -->
                 <div id="price-field">
                     <p>Price <small>(per person)</small>: £<span id="price">{{ price }}</span></p>
                 </div>
-
+            
                 <!-- Total Price Field -->
                 <div class="form-group">
                     <p>Total Price: £<span id="total-price">0</span></p>
                 </div>
-
+            
                 <div class="d-flex justify-content-end">
                     <button type="submit" class="btn btn-black rounded-0 text-uppercase">Confirm Reservation</button>
                 </div>
@@ -124,7 +123,7 @@
         // Variables
         const dates = {{ dates_json|safe }};
         const experiencesInfo = {{ experiences_info_json|safe }};
-        const experienceField = document.querySelector('select[name="experience"]');
+        const experienceField = document.querySelector('select[name="wine_tasting_product"]');
         const dateField = document.querySelector('.datepicker');
         const quantityInput = document.querySelector('.qty_input');
         const decrementBtn = document.querySelector('.decrement-qty');
