@@ -27,7 +27,7 @@
                 </div>
             </div>
             <div class="col-12 col-md-6 col-lg-4">
-                <div class="product-details-container mb-5 mt-md-5">
+                <div class="product-details-container mt-md-5">
                     <h3 class="mb-0">{{ product.name }}</h3>
                     
                     {% if product.grape %}
@@ -79,19 +79,56 @@
                             <div class="col-6 col-md-6 d-flex align-items-center">
                                 <input type="submit" class="btn btn-black rounded-0 w-100 text-uppercase" value="Add to basket">
                             </div>
-                            <!-- Return to Products Button -->
-                            <div class="col-12 mt-2">
-                                <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 px-0">
-                                    <span class="icon">
-                                        <i class="fas fa-chevron-left"></i>
-                                    </span>
-                                    <span class="text-uppercase">Return to Products</span>
-                                </a>
-                            </div>
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         </div>
                     </form>
                 </div>
+            </div>
+        </div>
+        <hr>
+        <!-- Product Details -->
+        <div class="row my-3">
+            <div class="col text-center">
+                <h4 class="logo-font">Product Details</h4>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-lg-8 offset-lg-2 mb-2">
+                <div class="row">
+                    <div class="col-8 col-sm-6 col-md-4">
+                        <ul class="list-unstyled">
+                            <li><strong>Grape:</strong> {{ product.grape }}</li>
+                            <li><strong>Style:</strong>  {{ product.style }}</li>
+                            <li><strong>Country:</strong>  {{ product.country }}</li>
+                            <li><strong>Region/State:</strong>  {{ product.region_state }}</li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-4">
+                        <ul class="list-unstyled">
+                            <li><strong>Unit Volume:</strong>  {{ product.unit_volume }}ml</li>
+                            <li><strong>Alcohol:</strong>  {{ product.alcohol_percentage }}%</li>
+                            <li><strong>Year:</strong>  {{ product.year }}</li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-4">
+                        <ul class="list-unstyled">
+                            <li><strong>Vegetarian:</strong>  {% if product.is_vegetarian %}Yes{% else %}No{% endif %}</li>
+                            <li><strong>Vegan:</strong>  {% if product.is_vegan %}Yes{% else %}No{% endif %}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Return to Products Button -->
+        <div class="row">
+            <div class="col-12 mt-2 d-flex justify-content-center mb-5">
+                <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 px-0">
+                    <span class="icon">
+                        <i class="fas fa-chevron-left"></i>
+                    </span>
+                    <span class="text-uppercase">Return to Products</span>
+                </a>
             </div>
         </div>
     </div>
