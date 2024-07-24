@@ -5,17 +5,17 @@ from .forms import WineTastingForm
 from django.contrib.auth.decorators import login_required
 import json
 
-
+@login_required
 def wine_tasting(request):
     if request.method == 'POST':
-        if not request.user.is_authenticated:
-            request.session['form_data'] = request.POST
-            return redirect('account_login') 
-
         form = WineTastingForm(request.POST)
         if form.is_valid():
             booking = form.save(commit=False)
             booking.user = request.user
+
+            wine_tasting_product = WineTastingProduct.objects.get(id=booking.wine_tasting_product.id)
+            booking.total_price = wine_tasting_product.price * booking.number_of_people
+            
             booking.save()
             messages.success(request, 'Booking was successful, please pay on the day you arrive.')
             return redirect('wine_tasting')
