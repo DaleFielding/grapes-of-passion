@@ -1,45 +1,45 @@
 <div class="collapse navbar-collapse" id="main-nav">
     <ul class="navbar-nav w-auto mx-auto">
         <li class="nav-item d-block d-md-none">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'home' %}" id="home-link">
+            <a class="logo-font font-weight-bold nav-link text-white mr-5" href="{% url 'home' %}" id="home-link">
                 Home
             </a>
         </li>
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font font-weight-bold nav-link text-white mr-5" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Offers
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                <a href="#" class="dropdown-item" id="deals-link">Deals</a>
-                <a href="{% url 'products' %}?discounted=true" class="dropdown-item">Discounts</a>
+            <div class="dropdown-menu border-0 bg-maroon" aria-labelledby="all-products-link">
+                <a href="#" class="dropdown-item text-white" id="deals-link">Deals</a>
+                <a href="{% url 'products' %}?discounted=true" class="dropdown-item text-white">Discounts</a>
             </div>
         </li>
 
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="clothing-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font font-weight-bold nav-link text-white mr-5" href="#" id="clothing-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Wine
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
-                <a href="{% url 'products' %}?category=red" class="dropdown-item">Red</a>
-                <a href="{% url 'products' %}?category=white" class="dropdown-item">White</a>
-                <a href="{% url 'products' %}?category=rose" class="dropdown-item">Rosé</a>
-                <a href="{% url 'products' %}?category=all-wine" class="dropdown-item">View All</a>
+            <div class="dropdown-menu border-0 bg-maroon text-white" aria-labelledby="clothing-link">
+                <a href="{% url 'products' %}?category=red" class="dropdown-item text-white">Red</a>
+                <a href="{% url 'products' %}?category=white" class="dropdown-item text-white">White</a>
+                <a href="{% url 'products' %}?category=rose" class="dropdown-item text-white">Rosé</a>
+                <a href="{% url 'products' %}?category=all-wine" class="dropdown-item text-white">View All</a>
             </div>
         </li>
 
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="homeware-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font font-weight-bold nav-link text-white mr-5" href="#" id="homeware-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Fortified Wine
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="homeware-link">
-                <a href="{% url 'products' %}?category=port" class="dropdown-item">Port</a>
-                <a href="{% url 'products' %}?category=sherry" class="dropdown-item">Sherry</a>
-                <a href="{% url 'products'%}?category=all-fortified-wine" class="dropdown-item">View All</a>
+            <div class="dropdown-menu border-0 bg-maroon text-white" aria-labelledby="homeware-link">
+                <a href="{% url 'products' %}?category=port" class="dropdown-item text-white">Port</a>
+                <a href="{% url 'products' %}?category=sherry" class="dropdown-item text-white">Sherry</a>
+                <a href="{% url 'products'%}?category=all-fortified-wine" class="dropdown-item text-white">View All</a>
             </div>
         </li>
 
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black" href="{% url 'wine_tasting' %}" id="specials-link">
+            <a class="logo-font font-weight-bold nav-link text-white" href="{% url 'wine_tasting' %}" id="specials-link">
                 Wine Tasting
             </a>
             </div>

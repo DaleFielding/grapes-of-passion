@@ -3,18 +3,36 @@ html {
 }
 
 body {
-    /* background: url() no-repeat center center
-        fixed; */
     background-size: cover;
     height: calc(100vh - 164px);
     color: #555;
     font-family: "Lato";
 }
 
-/* ----- Fonts ----- */
+/* ----- VARIABLES ----- */
 :root {
+    /* ----- Fonts ----- */
     --header-font: "Playfair Display", "Times New Roman", Times, serif;
     --general-font: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+
+    /* ----- Colours ----- */
+    --my-maroon: #6e324a;
+    --my-charcoal: #333333;
+    --my-dark-gold: #6a5425;
+    --my-grey: #c7c7c7;
+}
+
+.bg-maroon {
+    background-color: var(--my-maroon);
+}
+.bg-charcoal {
+    background-color: var(--my-charcoal);
+}
+.bg-dark-gold {
+    background-color: var(--my-dark-gold);
+}
+.bg-grey {
+    background-color: var(--my-grey);
 }
 
 * {
@@ -92,8 +110,8 @@ input[name="q"]::placeholder {
 /* Allauth form formatting */
 
 .allauth-form-inner-content p {
-    margin-top: 1.5rem; /* mt-4 */
-    color: #6c757d; /* text-secondary */
+    margin-top: 1.5rem;
+    color: #6c757d;
 }
 
 .allauth-form-inner-content input {
@@ -141,12 +159,15 @@ input[name="q"]::placeholder {
 }
 
 .allauth-form-inner-content a {
-    color: #17a2b8; /* text-info */
+    color: #17a2b8;
 }
 
-/* ----- Temporary ----- */
+/* ----- Logo ----- */
 .invert-colours {
     filter: invert(100%);
+}
+
+.logo-small {
     height: 64px;
     width: 64px;
 }
@@ -249,9 +270,6 @@ input[name="q"]::placeholder {
 }
 
 /* Footer */
-footer {
-    background-color: #c7c7c7;
-}
 
 #footer-details a {
     text-decoration: none;
@@ -266,6 +284,23 @@ footer {
 
 .animate-click:active {
     transform: scale(0.9);
+}
+
+/* ----- WINE TASTING ----- */
+
+.flatpickr-day:not(.flatpickr-disabled) {
+    background-color: #dddddd;
+    color: #000000;
+    border-radius: 25px;
+    border: 2px solid #dddddd;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.flatpickr-day:not(.flatpickr-disabled):hover {
+    background-color: #569ff7;
+    border: 2px solid #569ff7;
+    color: #ffffff;
+    cursor: pointer;
 }
 
 /* ----- MEDIA QUERIES ----- */
