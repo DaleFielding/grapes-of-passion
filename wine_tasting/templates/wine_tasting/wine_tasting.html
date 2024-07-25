@@ -45,7 +45,8 @@
 
     <!-- Wine Tasting Booking Form -->
     <div class="container my-5">
-        <h3 class="py-3">Select Your Experience</h3>
+        <h3 class="pt-3">Select Your Experience</h3>
+        <p class=""><small>Please note, you will need to be logged in to book an experience<small></p>
         <div class="col-12 col-lg-6">
             <form class="mt-3" action="{% url 'wine_tasting' %}" method="POST" id="wine-tasting-form">
                 {% csrf_token %}

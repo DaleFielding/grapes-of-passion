@@ -1,23 +1,24 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse
 from django.contrib import messages
 from .models import WineTastingProduct, WineTastingBooking
 from .forms import WineTastingForm
-from django.contrib.auth.decorators import login_required
 import json
 
-@login_required
+
 def wine_tasting(request):
     if request.method == 'POST':
         form = WineTastingForm(request.POST)
         if form.is_valid():
+            if not request.user.is_authenticated:
+                messages.info(request, 'Please log in to book your experience.')
+                return redirect(f"{reverse('account_login')}?next={reverse('wine_tasting')}")
+            
             booking = form.save(commit=False)
             booking.user = request.user
-
             wine_tasting_product = WineTastingProduct.objects.get(id=booking.wine_tasting_product.id)
             booking.total_price = wine_tasting_product.price * booking.number_of_people
-            
             booking.save()
-            messages.success(request, 'Booking was successful, please pay on the day you arrive.')
+            messages.success(request, 'Your booking was successful! This can now be viewed in your profile.')
             return redirect('wine_tasting')
     else:
         form_data = request.session.pop('form_data', None)
