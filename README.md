@@ -368,7 +368,7 @@ The colour scheme is relatively simple, I have used:
 -   A shade of grey for the background of the footer to differentiate between the rest of the content
     > The chosen colour scheme meets the Web Content Accessibility Guidelines for readability.
 
-### Features:
+### Features
 
 #### General:
 
@@ -526,3 +526,13 @@ The colour scheme is relatively simple, I have used:
 -   Displays the message ‘Sorry, this page doesn’t exist’.
 -   Image that displays the the 404 error.
 -   Link/button within the page content that will direct the user to the home page.
+
+### Future implementations
+
+1. Total price to be included within the product details section so that it updates when the quantity is adjusted.
+2. Email functionality to be implemented to deployed site so that verification can be completed, passwords can be reset. Etc
+3. Further deal functionality to be included in basket/checkout for the 2 advertised offers that do not currently have the functionality built in yet.
+4. Filters to be included with the product/query page so that users can refine the products that they want to see further.
+5. Pagination to be included to reduce the amount of products that are displayed on the page.
+6. Online payment processing to be available for Wine Tasting Bookings.
+7. More robust form validation in order prevent form submissions when required fields are incomplete.
