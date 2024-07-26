@@ -334,6 +334,33 @@ I have run each of my Python files through the linter, there were quite a few ch
 | 24  | Manage these products so I can update and delete.                             | Pass   |
 | 25  | View a warning if deleting an item to prevent accidental deletions.           | Pass   |
 
+## Other Testing
+
+Google Developer tools:
+
+-   I have continuously tested and played around with many different resolutions throughout developement, to ensure there is no unexpected behaviour.
+
+Testing on other browsers:
+
+-   Google Chrome.
+-   Microsoft Edge.
+-   Firefox.
+
+Devices:
+
+-   Google Pixel.
+-   Samsung S10.
+-   Dell Inspiron (Windows 11).
+-   Lenovo laptop
+
+Other users:
+
+-   My partner Laura Gibbons has tested the site herself on different browsers on her Google Pixel.
+
+Future Test Needed:
+
+Unfortunately I have not been able to test on any mac software/hardware due to hardware issue, this will need to be completed in the future
+
 ## Bugs
 
 | Bug                                                                                                                                                                                                                                            | Fixed By                                                                                                                                                                                  |
