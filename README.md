@@ -343,3 +343,27 @@ I have listed the pages below including the features they will contain.
 ![404 page](resources/wireframes/404-page.png)
 
   </details>
+
+### Surface
+
+#### Habits and conventions:
+
+Users will navigate through the site by clicking on the links in the navbar, scrolling down the pages, through clicking on the various buttons and interactive elements within the site.
+
+#### Typography
+
+![playfair display](resources/font-playfair-display.png)
+![montserrat](resources/font-montserrat.png)<br>
+I have chosen a combination of google fonts “Playfair Display” for the larger headers and “Montserrat” for the general font. I feel these have en elegant style, complement each other nicely, and are clear and readable.
+
+#### Colour Scheme:
+
+![colour scheme](resources/colour-scheme.png)<br>
+The colour scheme is relatively simple, I have used:
+
+-   A shade of maroon for the navigation and dropdown backgrounds, with a white font colour.
+-   White for the general background, I had intended to use a darker colour however during build I realised that the white background does compliment the product images much better.
+-   Charcoal for the general font and also the background for the free delivery banner.
+-   Black for the buttons and to make certain font stand out more.
+-   A shade of grey for the background of the footer to differentiate between the rest of the content
+    > The chosen colour scheme meets the Web Content Accessibility Guidelines for readability.
