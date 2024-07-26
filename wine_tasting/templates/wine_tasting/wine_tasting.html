@@ -125,13 +125,15 @@
         // Variables
         const dates = {{ dates_json|safe }};
         const experiencesInfo = {{ experiences_info_json|safe }};
-        const experienceField = document.querySelector('select[name="wine_tasting_product"]');
-        const dateField = document.querySelector('.datepicker');
-        const quantityInput = document.querySelector('.qty_input');
-        const decrementBtn = document.querySelector('.decrement-qty');
-        const incrementBtn = document.querySelector('.increment-qty');
-        const priceField = document.getElementById('price');
-        const totalPriceField = document.getElementById('total-price');
+        const experienceField = document.querySelector(
+            "select[name='wine_tasting_product']"
+        );
+        const dateField = document.querySelector(".datepicker");
+        const quantityInput = document.querySelector(".qty_input");
+        const decrementBtn = document.querySelector(".decrement-qty");
+        const incrementBtn = document.querySelector(".increment-qty");
+        const priceField = document.getElementById("price");
+        const totalPriceField = document.getElementById("total-price");
         let datepickerInstance;
 
         // Updates and enables/disables datepicker based on selected experience
@@ -142,7 +144,9 @@
                     datepickerInstance.destroy();
                 }
                 datepickerInstance = flatpickr(dateField, {
-                    enable: dates[selectedExperience].map(date => date.trim())
+                    enable: dates[selectedExperience].map(
+                        date => date.trim()
+                    )
                 });
                 dateField.disabled = false;
             } else {
@@ -174,18 +178,19 @@
                 decrementBtn.disabled = quantityInput.value <= minQuantity;
                 incrementBtn.disabled = quantityInput.value >= maxQuantity;
                 quantityInput.disabled = false;
-                
+
                 // Update total price
                 updateTotalPrice();
             } else {
-                // Disables quantity input and buttons if no experience is selected
-                quantityInput.value = '';
+                // Disables quantity input and buttons if no experience 
+                // is selected
+                quantityInput.value = "";
                 decrementBtn.disabled = true;
                 incrementBtn.disabled = true;
                 quantityInput.disabled = true;
-                
+
                 // Reset total
-                totalPriceField.innerText = '0';
+                totalPriceField.innerText = "0";
             }
         }
 
@@ -201,35 +206,41 @@
         updateDatepicker();
         updateQuantity();
 
-        // Listens for experience field change to update datepicker and quantity input
-        experienceField.addEventListener('change', function() {
+        // Listens for experience field change to update datepicker and 
+        // quantity input
+        experienceField.addEventListener("change", function() {
             updateDatepicker();
             updateQuantity();
             // Set date input to empty string when experience changes
-            dateField.value = '';
+            dateField.value = "";
         });
 
         // Click event listener for decrement button
-        decrementBtn.addEventListener('click', function() {
+        decrementBtn.addEventListener("click", function() {
             let currentValue = parseInt(quantityInput.value);
             if (currentValue > parseInt(quantityInput.min)) {
                 quantityInput.value = currentValue - 1;
-                decrementBtn.disabled = quantityInput.value <= parseInt(quantityInput.min);
-                incrementBtn.disabled = quantityInput.value >= parseInt(quantityInput.max);
+                decrementBtn.disabled = quantityInput.value <= 
+                    parseInt(quantityInput.min);
+                incrementBtn.disabled = quantityInput.value >= 
+                    parseInt(quantityInput.max);
                 updateTotalPrice();
             }
         });
 
         // Click event listener for increment button
-        incrementBtn.addEventListener('click', function() {
+        incrementBtn.addEventListener("click", function() {
             let currentValue = parseInt(quantityInput.value);
             if (currentValue < parseInt(quantityInput.max)) {
                 quantityInput.value = currentValue + 1;
-                decrementBtn.disabled = quantityInput.value <= parseInt(quantityInput.min);
-                incrementBtn.disabled = quantityInput.value >= parseInt(quantityInput.max);
+                decrementBtn.disabled = quantityInput.value <= 
+                    parseInt(quantityInput.min);
+                incrementBtn.disabled = quantityInput.value >= 
+                    parseInt(quantityInput.max);
                 updateTotalPrice();
             }
         });
     });
 </script>
 {% endblock %}
+
