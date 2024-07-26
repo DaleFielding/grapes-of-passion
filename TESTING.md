@@ -103,3 +103,27 @@ For this project, I started with Test Driven Development (TDD), writing tests be
 [Check Validation Here](https://validator.w3.org/nu/?doc=https%3A%2F%2Fgrapes-of-passion-37a9373e50d5.herokuapp.com%2Fwine_tasting%2F)
 
 -   No errors or warnings displayed.
+
+### WSC - CSS Validation Service
+
+I have entered my external css file into the validator:
+
+-   No errors found.
+-   Some warnings have appeared in relation to using variables for the colours/fonts, using vendor extensions and setting the same colour for border and background. I have left these in as they were all taught in codeinstitute lessons.
+
+![validator-css-results](resources/validator-css-results.png)
+![validator-css-warnings](resources/validator-css-warnings.png)
+
+### JSLint
+
+A large amount of the functionality comes from script within the boutique_ado project. I have validated the additional js script/logic I have added as below:
+
+#### Wine Tasting script
+
+-   A few warnings/errors displayed, which have been corrected except one. Listed below:
+
+| Warning/Error                              | Corrected by                                                                                                                                                                          |
+| ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Line is longer than 80 characters          | Split long lines into shorter ones                                                                                                                                                    |
+| Use double quotes, not single quotes       | Changing the highlighted single quotes to double quotes                                                                                                                               |
+| Expected an identifier and instead saw `{` | Not corrected, unsure why `const dates = {{ dates_json  \| safe }};` is flagging as the function works as expected, do not want to cause this to change so I have left this as it is. |
