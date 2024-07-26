@@ -52,7 +52,7 @@
                 {% csrf_token %}
                 <!-- Experiences Field -->
                 <div class="form-group">
-                    <select name="wine_tasting_product" class="form-control border-black rounded-0 profile-form-input">
+                    <select name="wine_tasting_product" class="form-control border-black rounded-0 profile-form-input" required >
                         {% for value, label in form.wine_tasting_product.field.choices %}
                             <option value="{{ value }}" {% if form.wine_tasting_product.value == value %}selected{% endif %}>{{ label }}</option>
                         {% endfor %}
@@ -62,7 +62,7 @@
                 <!-- Contact Number Field -->
                 <div class="form-group">
                     <label>Contact Number</label>
-                    <input type="text" name="contact_number" class="form-control border-black rounded-0 profile-form-input" placeholder="Enter contact number" />
+                    <input type="text" name="contact_number" class="form-control border-black rounded-0 profile-form-input" placeholder="Enter contact number" required />
                 </div>
             
                 <!-- Special Requirements Field -->
@@ -74,7 +74,7 @@
                 <!-- Date Field -->
                 <div class="form-group">
                     <label>Select Date</label>
-                    <input type="text" name="selected_date" class="form-control datepicker border-black rounded-0 profile-form-input" placeholder="-Select Date-" />
+                    <input type="text" name="selected_date" class="form-control datepicker border-black rounded-0 profile-form-input"  placeholder="-Select Date-" required />
                 </div>
             
                 <!-- Quantity Field with Custom Buttons -->
