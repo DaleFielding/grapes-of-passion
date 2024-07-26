@@ -6,8 +6,8 @@
     <h4 class="col-12 text-center">Sorry, page doesn't exist</h4>
   </div>
   <!-- 404 Image -->
-  <div class="row justify-content-center mb-3">
-    <div class="col-12 col-sm-8 col-md-6">
+  <div class="row">
+    <div class="col-12 col-sm-8 col-md-6 d-flex justify-content-center mb-3">
       <img
         src="{{ MEDIA_URL }}404.png" alt="404 image"
         alt="image to display a 404 error"
@@ -16,8 +16,8 @@
     </div>
   </div>
   <!-- Homepage button -->
-  <div class="row d-flex justify-content-center">
-    <div class="col-10 col-md-8 col-lg-6">
+  <div class="row">
+    <div class="col-10 col-md-8 col-lg-6 d-flex justify-content-center mb-5">
       <a
         class="btn btn-secondary btn-lg animate-click"
         href="{% url 'home' %}"
