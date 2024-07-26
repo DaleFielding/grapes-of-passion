@@ -1,45 +1,33 @@
-{% load static %}
-
 <!doctype html>
 <html lang="en">
   <head>
-
+    {% load static %}
     {% block meta %}
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     {% endblock %}
-
-    {% block extra_meta %}
-    {% endblock %}
-
+    {% block extra_meta %}{% endblock %}
     {% block corecss %}
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% endblock %}
-
     {% block extra_css %}
-    <!-- Flatpickr --> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-    <!-- Google fonts --> 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     {% endblock %}
-
     {% block corejs %}
         <script src="https://kit.fontawesome.com/4c839ba6ba.js" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-        <!-- Stripe -->
         <script src="https://js.stripe.com/v3/"></script>
     {% endblock %}
-
     {% block extra_js %}
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     {% endblock %}
-
     <title>Grapes of Passion {% block extra_title %}{% endblock %}</title>
   </head>
   <body>
@@ -65,15 +53,15 @@
                   </form>
               </div>
               <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-                  <ul class="list-inline list-unstyled text-center text-lg-right my-0 ">
+                  <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                       <li class="list-inline-item dropdown">
-                          <a  class="text-white nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <a class="text-white nav-link" href="#" id="user-options-desktop" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                               <div class="text-center" id="nav-font">
                                   <div><i class="fas fa-user fa-lg"></i></div>
                                   <p class="my-0">My Account</p>
                               </div>
                           </a>
-                          <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                          <div class="dropdown-menu border-0" aria-labelledby="user-options-desktop">
                               {% if request.user.is_authenticated %}
                                   {% if request.user.is_superuser %}
                                     <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
@@ -111,19 +99,14 @@
                 {% include 'includes/mobile-top-header.html' %}
                 {% include 'includes/main-nav.html' %}
             </nav>
-        </div>
-        <div id="delivery-banner" class="row text-center">
+          </div>
+          <div id="delivery-banner" class="row text-center">
             <div class="col bg-charcoal text-white">
                 <h4 class="logo-font my-1">Free delivery on orders over £{{ free_delivery_threshold }}!</h4>              
             </div>            
-        </div>
-      </header>
-  
-      {% if messages %}
-          <div class="message-container"></div>
-      {% endif %}
+          </div>
     </header>
-
+  
     {% if messages %}
         <div class="message-container">
             {% for message in messages %}
@@ -142,20 +125,13 @@
         </div>
     {% endif %}
 
-    {% block page_header %}
-    {% endblock %}
-
-    {% block content %}
-    {% endblock %}
-
+    {% block page_header %}{% endblock %}
+    {% block content %}{% endblock %}
     {% block postloadjs %}
-    <script type="text/javascript">
-        // Toast
+    <script>
         $('.toast').toast('show');
-        // Scroll to offers
         document.addEventListener('DOMContentLoaded', function() {
             const dealsLink = document.getElementById('deals-link');
-            
             dealsLink.addEventListener('click', function(event) {
                 event.preventDefault();
                 const atHomepage = window.location.pathname === "{% url 'home' %}";
@@ -169,23 +145,17 @@
         });
     </script>
     {% endblock %}
-
-  </body>
-    <!-- Footer -->
-    <hr class="m-0">
+    
     <footer class="container-fluid py-5 bg-grey">
-        
         <div class="row text-center row-gap-4" id="footer-details">
-            <!--- Address and social -->
             <div class="col-12 col-md-4">
                 <p class="inline-block">
                 Grapes of Passion<br />
                 12 Cold Harbour Lane <br />
                 Bristol, BS12 7SB <br />
-                <a
-                    href="https://www.google.com/maps/place/Coldharbour+Ln,+Stoke+Gifford,+Bristol/@51.5013624,-2.5492263,17z/data=!3m1!4b1!4m10!1m2!2m1!1scold+harbour+lane+bristol!3m6!1s0x48719033c7ca9d8b:0xe951e08af5dd4b21!8m2!3d51.5013592!4d-2.5443554!15sChljb2xkIGhhcmJvdXIgbGFuZSBicmlzdG9skgEFcm91dGXgAQA!16s%2Fg%2F1tg34nw5?entry=ttu"
-                    target="_blank"
-                    ><i class="fa-solid fa-location-dot animate-click"></i>
+                <a href="https://www.google.com/maps/place/Coldharbour+Ln,+Stoke+Gifford,+Bristol/@51.5013624,-2.5492263,17z/data=!3m1!4b1!4m10!1m2!2m1!1scold+harbour+lane+bristol!3m6!1s0x48719033c7ca9d8b:0xe951e08af5dd4b21!8m2!3d51.5013592!4d-2.5443554!15sChljb2xkIGhhcmJvdXIgbGFuZSBicmlzdG9skgEFcm91dGXgAQA!16s%2Fg%2F1tg34nw5?entry=ttu"
+                    target="_blank">
+                    <i class="fa-solid fa-location-dot animate-click"></i>
                     <span class="sr-only">Location</span>
                 </a>
                 <br />
@@ -194,66 +164,52 @@
                 </p>
                 <ul class="list-unstyled social-links d-flex justify-content-center m-0">
                     <li class="list-inline-item pr-3">
-                        <a
-                        href="https://www.facebook.com/"
-                        target="_blank"
-                        aria-label="Facebook"
-                        >
-                        <i class="fa fa-facebook animate-click" aria-hidden="true"></i>
-                        <span class="sr-only">Facebook</span>
+                        <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook">
+                            <i class="fa fa-facebook animate-click" aria-hidden="true"></i>
+                            <span class="sr-only">Facebook</span>
                         </a>
                     </li>
                     <li class="list-inline-item">
-                        <a
-                        href="https://twitter.com/"
-                        target="_blank"
-                        aria-label="Twitter"
-                        >
-                        <i class="fa-brands fa-x-twitter animate-click"></i>
-                        <span class="sr-only">Twitter</span>
+                        <a href="https://twitter.com/" target="_blank" aria-label="Twitter">
+                            <i class="fa-brands fa-x-twitter animate-click"></i>
+                            <span class="sr-only">Twitter</span>
                         </a>
                     </li>
                     <li class="list-inline-item">
-                        <a
-                        href="https://www.instagram.com/"
-                        target="_blank"
-                        aria-label="Instagram"
-                        >
-                        <i class="fa fa-instagram pl-3 animate-click" aria-hidden="true"></i>
-                        <span class="sr-only">Instagram</span>
+                        <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram">
+                            <i class="fa fa-instagram pl-3 animate-click" aria-hidden="true"></i>
+                            <span class="sr-only">Instagram</span>
                         </a>
                     </li>
-                    </ul>
+                </ul>
             </div>
-        <!--- Logo and copyright -->
-        <div class="col-12 col-md-4 d-flex align-items-center justify-content-center">
-            <div class="row">
-                <div class="col-12 d-flex justify-content-center p-3">
-                    <img src="{{ MEDIA_URL }}logo.png" alt="Logo" class="invert-colours footer-logo" style="height: 100px; width: auto;"> 
-                </div>
-                <div class="col-12">
-                    <p class="heading-font footer-heading m-0"><small>copyright 2024 &#169;</small></p>
+            <div class="col-12 col-md-4 d-flex align-items-center justify-content-center">
+                <div class="row">
+                    <div class="col-12 d-flex justify-content-center p-3">
+                        <img src="{{ MEDIA_URL }}logo.png" alt="Logo" class="invert-colours footer-logo" style="height: 100px; width: auto;">
+                    </div>
+                    <div class="col-12">
+                        <p class="heading-font footer-heading m-0"><small>copyright 2024 &#169;</small></p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- Footer nav links -->
-        <div class="col-12 col-md-4 d-flex align-items-center justify-content-center">
-            <ul
-                class="uppercase heading-font list-unstyled m-0">
-                <li class="p-1 animate-click">
-                    <a href="{% url 'products' %}?category=all-wine"> Wine </a>
-                </li>
-                <li class="p-1 animate-click">
-                    <a href="{% url 'products'%}?category=all-fortified-wine"> Fortified Wine </a>
-                </li>
-                <li class="p-1 animate-click">
-                    <a href="{% url 'wine_tasting' %}"> Wine Tasting </a>
-                </li>
-                <li class="p-1 animate-click">
-                    <a href="{% url 'home' %}">Home</a>
-                </li>
-            </ul>
+            <div class="col-12 col-md-4 d-flex align-items-center justify-content-center">
+                <ul class="uppercase heading-font list-unstyled m-0">
+                    <li class="p-1 animate-click">
+                        <a href="{% url 'products' %}?category=all-wine"> Wine </a>
+                    </li>
+                    <li class="p-1 animate-click">
+                        <a href="{% url 'products'%}?category=all-fortified-wine"> Fortified Wine </a>
+                    </li>
+                    <li class="p-1 animate-click">
+                        <a href="{% url 'wine_tasting' %}"> Wine Tasting </a>
+                    </li>
+                    <li class="p-1 animate-click">
+                        <a href="{% url 'home' %}">Home</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </footer>
-
+  </body>
 </html>
