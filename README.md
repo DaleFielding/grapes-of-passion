@@ -12,7 +12,7 @@ Website to be created for a fictional independent wine seller focused on enhanci
 
 #### _Viewing/Navigation and Searching_
 
-| #   | As a Shopper I want to be able to...                      |
+| #   | As a User/Shopper I want to be able to...                 |
 | --- | --------------------------------------------------------- |
 | 1   | Navigate around the site by scrolling.                    |
 | 2   | Navigate through categories and subcategories.            |
@@ -28,7 +28,7 @@ Website to be created for a fictional independent wine seller focused on enhanci
 
 #### _Checkout/Payment Processing_
 
-| #   | As a Shopper I want to be able to...                                      |
+| #   | As a User/Shopper I want to be able to...                                 |
 | --- | ------------------------------------------------------------------------- |
 | 12  | View the grand total and list of the products to check before purchasing. |
 | 13  | Remove/or adjust quantity of items in the basket.                         |
@@ -37,7 +37,7 @@ Website to be created for a fictional independent wine seller focused on enhanci
 
 #### _Managing Accounts_
 
-| #   | As a Shopper I want to be able to...            |
+| #   | As a User/Shopper I want to be able to...       |
 | --- | ----------------------------------------------- |
 | 16  | Register for an account.                        |
 | 17  | Receive an email confirmation.                  |

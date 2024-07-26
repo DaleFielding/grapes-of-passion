@@ -286,3 +286,50 @@ I have run each of my Python files through the linter, there were quite a few ch
 | Message display       | Displays message ‘Sorry, this page doesn’t exist’. | Pass   |
 | Error image           | Displays the 404 error image correctly.            | Pass   |
 | Home page link/button | Link/Button directs the user to the home page.     | Pass   |
+
+## Testing User Stories
+
+#### _Viewing/Navigation and Searching_
+
+| #   | As a User/Shopper I want to be able to...                 | Result                                                                                  |
+| --- | --------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| 1   | Navigate around the site by scrolling.                    | Pass                                                                                    |
+| 2   | Navigate through categories and subcategories.            | Pass                                                                                    |
+| 3   | View products.                                            | Pass                                                                                    |
+| 4   | View available offers.                                    | Fail - As only one of the offers that is on display is actually available currently.    |
+| 5   | Search for specific queries relating to products.         | Pass                                                                                    |
+| 6   | View imagery and relevant information about each product. | Pass                                                                                    |
+| 7   | See the total amount of products in my basket.            | Pass                                                                                    |
+| 8   | Filter to refine results for product/query.               | Fail - As this functionality has not been implemented due to deadline/time constraints. |
+| 9   | Sort products depending on preference.                    | Pass                                                                                    |
+| 10  | View contact information and social media links.          | Pass                                                                                    |
+| 11  | Book dates for events and specify any requirements.       | Pass                                                                                    |
+
+#### _Checkout/Payment Processing_
+
+| #   | As a User/Shopper I want to be able to...                                 | Result                                                                        |
+| --- | ------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| 12  | View the grand total and list of the products to check before purchasing. | Pass                                                                          |
+| 13  | Remove/or adjust quantity of items in the basket.                         | Pass                                                                          |
+| 14  | Trust my personal and payment information kept secret and secure.         | Pass                                                                          |
+| 15  | Receive an email confirmation if checkout is successful.                  | Fail - This functionality is not currently operational as no emails are sent. |
+
+#### _Managing Accounts_
+
+| #   | As a User/Shopper I want to be able to...       | Result                                                                        |
+| --- | ----------------------------------------------- | ----------------------------------------------------------------------------- |
+| 16  | Register for an account.                        | Pass                                                                          |
+| 17  | Receive an email confirmation.                  | Pass                                                                          |
+| 18  | Login and logout of my account.                 | Pass                                                                          |
+| 19  | Recover password if forgotten.                  | Fail - This functionality is not currently operational as no emails are sent. |
+| 20  | Add default delivery information in my profile. | Pass                                                                          |
+| 21  | View my order history.                          | Pass                                                                          |
+
+#### _Site Owners/Admins_
+
+| #   | As a Site Owner/Admin I want to be able to...                                 | Result |
+| --- | ----------------------------------------------------------------------------- | ------ |
+| 22  | Create products to including relevant details to be stored within a database. | Pass   |
+| 23  | View products displayed throughout the site.                                  | Pass   |
+| 24  | Manage these products so I can update and delete.                             | Pass   |
+| 25  | View a warning if deleting an item to prevent accidental deletions.           | Pass   |
