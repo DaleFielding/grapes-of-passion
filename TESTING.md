@@ -144,3 +144,145 @@ I have run each of my Python files through the linter, there were quite a few ch
 | Various Django imports that were unused | Removing these as unnecessary                                              |
 | Do not use bare except                  | Importing Http404 to include after the except clause                       |
 | Too many blank lines                    | Reducing the amount of blank lines                                         |
+
+## Manual Testing
+
+### General
+
+| Test                                         | Expected                                                                           | Result |
+| -------------------------------------------- | ---------------------------------------------------------------------------------- | ------ |
+| Responsive on all devices                    | The website layout adjusts as expected across mobile, tablet, and desktop devices. | Pass   |
+| Toasts for alerts, errors, successes         | Toast messages appear for alerts, errors, and successes.                           | Pass   |
+| Toasts for product information in the basket | Toast messages display information about products in the basket.                   | Pass   |
+
+### All Pages
+
+| Test                                                                                                | Expected                                                                                          | Result |
+| --------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------ |
+| Navbar - Logo click                                                                                 | Clicking the logo reloads the home page.                                                          | Pass   |
+| Navbar - Search bar                                                                                 | Search bar collapses into an icon on small devices and expands out when the icon is clicked.      | Pass   |
+| Navbar - Search bar functions and products relevant to the query are displayed in the products page | Search bar functions and collapses into an icon on small devices.                                 | Pass   |
+| Navbar - My Account dropdown                                                                        | Dropdown shows correct options based on user login status.                                        | Pass   |
+| Navbar - Basket icon                                                                                | Basket icon displays total price of items.                                                        | Pass   |
+| Main Navigation - Category links                                                                    | Clicking categories/subcategories navigates to correct sections/pages.                            | Pass   |
+| Banner - Free delivery criteria                                                                     | Banner displays free delivery criteria correctly.                                                 | Pass   |
+| Footer - Social media links                                                                         | Social media links direct to the appropriate pages on a separate tab.                             | Pass   |
+| Footer - Location link                                                                              | Location link directs to the appropriate Google map location on a separate tab.                   | Pass   |
+| Footer - Company information, logo and copyright                                                    | Company name, address, contact number, email, logo, copyright info and Google link are displayed. | Pass   |
+| Footer - Navigation categories                                                                      | Navigation categories direct to the intended pages.                                               | Pass   |
+
+### Homepage
+
+| Test                      | Expected                                                                                                                                                                                              | Result |
+| ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
+| Background image          | Background image takes up full width with company name and 'Scroll to Explore' message is displayed.                                                                                                  | Pass   |
+| Recommended wines section | Displays 4 bottles of wine with images, product names, and prices, clicking on these directs to the product details page for that image. Also, the number of products displayed reduces when scaling. | Pass   |
+| Wine tasting section      | Displays an image, welcoming message, and 'Discover More' button which links to the wine tasting page.                                                                                                | Pass   |
+| Offers section            | Displays a grid of 3 images of available offers. The number of offers displayed reduces when scaling.                                                                                                 | Pass   |
+
+### Product/Query Page
+
+| Test                                     | Expected                                                                                                                                                                                                                                                           | Result |
+| ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------ |
+| Title and paragraph                      | Title and paragraph showing the number of results and 'View All Products' links to all products within the product page.                                                                                                                                           | Pass   |
+| Sort button                              | Sort button sorts by price, discount, name, and category (ascending and descending).                                                                                                                                                                               | Pass   |
+| Products grid display                    | Products are displayed with images, prices, and open product details on click.                                                                                                                                                                                     | Pass   |
+| Back to top button                       | Button directs the user back to the top of the page.                                                                                                                                                                                                               | Pass   |
+| Product edit function (Superuser only)   | Link should be displayed, when clicked this directs them to the edit product page where they can edit that particular product. This should not be available if not a superuser.                                                                                    | Pass   |
+| Product delete function (Superuser only) | Link should be displayed, when clicked this pops up with a modal asking user to confirm if they want to delete the product (yes or no buttons), product is deleted if yes, modal is closed with no deletion made. This should not be available if not a superuser. | Pass   |
+
+### Product Details Page
+
+| Test                         | Expected                                                                     | Result                                                                                                  |
+| ---------------------------- | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| Larger product image         | Larger product image is displayed correctly.                                 | Pass                                                                                                    |
+| Product name and details     | Product name, grape, country, description, and price are displayed.          | Pass                                                                                                    |
+| Price and quantity selection | Quantity selection functionality works correctly.                            | Fail - It does, however, there hasn’t been any functionality built in to adjust the price on this page. |
+| Add to basket button         | Adds selected product to the basket.                                         | Pass                                                                                                    |
+| More details section         | Displays detailed product information and clicking link returns to products. | Pass                                                                                                    |
+
+### Wine Tasting Page
+
+| Test                                | Expected                                                                                     | Result |
+| ----------------------------------- | -------------------------------------------------------------------------------------------- | ------ |
+| Title                               | Page title is displayed.                                                                     | Pass   |
+| Wine tasting products are displayed | Displays wine tasting experience titles, descriptions, and images.                           | Pass   |
+| Form for booking                    | Form fields (experience, contact number, requirements, datepicker, quantity) are functional. | Pass   |
+| Price and total price               | Price per person and total price update correctly.                                           | Pass   |
+| Confirm Reservation button          | Redirects to login if not logged in and confirms booking if logged in.                       | Pass   |
+
+### Basket Page
+
+| Test                            | Expected                                                                                                                                                           | Result                                                                             |
+| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------- |
+| Page title                      | Page title 'Basket' is displayed.                                                                                                                                  | Pass                                                                               |
+| Basket products display         | Displays products with image, name, individual price, and total price.                                                                                             | Pass                                                                               |
+| Update quantity/remove product  | Functionality to update quantity or remove a product works correctly.                                                                                              | Pass                                                                               |
+| Basket total display/updating   | Displays correct basket total, delivery costs, and grand total.                                                                                                    | Pass                                                                               |
+| Offer - 5 bottles of wine for 4 | For every multiple of 5 bottles of wine in the basket, the cheapest item(s) should be deducted from the basket and grand total then a discounted figure displayed. | Pass                                                                               |
+| Offer - Other 2 offers          | Discounts should be applied appropriately to the other offers that are available.                                                                                  | Fail - the functionality has not been implemented for those to discount the price. |
+| Free delivery message           | Message about free delivery criteria displays correctly.                                                                                                           | Pass                                                                               |
+| Proceed to checkout button      | Button directs the user to secure checkout.                                                                                                                        | Pass                                                                               |
+
+### Checkout Page
+
+| Test                                            | Expected                                                                                                                                            | Result |
+| ----------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
+| Page title                                      | Page title 'Checkout' is displayed.                                                                                                                 | Pass   |
+| Form for user details                           | Form fields for name, email, delivery address, and card details are functional.                                                                     | Pass   |
+| Order summary display                           | Displays products, product name, image, quantity, and subtotal correctly.                                                                           | Pass   |
+| Complete Order button                           | Triggers Stripe payment process.                                                                                                                    | Pass   |
+| Adjust Basket button                            | Returns user to the basket page.                                                                                                                    | Pass   |
+| Payment processing - Initial payment processing | Displays loading overlay, confirmation appears whether successful or failure.                                                                       | Pass   |
+| Stripe Webhook                                  | Displays correct information about the processed payment, including payment_intent creation/whether successful + charge updated/whether successful. | Pass   |
+
+### Register Page
+
+| Test                  | Expected                                                                                       | Result |
+| --------------------- | ---------------------------------------------------------------------------------------------- | ------ |
+| Page title            | Page title 'Register' is displayed.                                                            | Pass   |
+| Login message         | Message directing user to login if they already have an account is displayed, link works also. | Pass   |
+| Form for registration | Form fields for email, confirm email, username, password, confirm password are functional.     | Pass   |
+| Register button       | Completes registration process.                                                                | Pass   |
+| Back to Login button  | Directs user back to login.                                                                    | Pass   |
+
+### Sign In Page
+
+| Test                           | Expected                                                                                                  | Result |
+| ------------------------------ | --------------------------------------------------------------------------------------------------------- | ------ |
+| Page title                     | Page title 'Sign in' is displayed.                                                                        | Pass   |
+| Sign up message                | Message directing user to 'Sign up' if they do not already have an account is displayed, link works also. | Pass   |
+| Form for sign in               | Form fields for username/email and password are functional.                                               | Pass   |
+| Remember Me checkbox           | Checkbox remembers user's details.                                                                        | Pass   |
+| Sign in button                 | Signs the user in.                                                                                        | Pass   |
+| Home button                    | Returns user to Home page.                                                                                | Pass   |
+| Forgot password link           | Directs user to 'Forgot password' page.                                                                   | Pass   |
+| Forgot password email received | Forgotten password email link is received.                                                                | Fail   |
+
+### Profile Page
+
+| Test                                 | Expected                                                                   | Result |
+| ------------------------------------ | -------------------------------------------------------------------------- | ------ |
+| Page title                           | Page title 'My Profile' is displayed.                                      | Pass   |
+| Default Delivery Information section | Form to add and update default delivery information is functional.         | Pass   |
+| Order History section                | Displays order history with order no, date, total, and items.              | Pass   |
+| Order no link                        | Directs user to previous order confirmation.                               | Pass   |
+| Wine Tasting Bookings section        | Displays bookings with experience name, date, number of guests, and price. | Pass   |
+
+### Product Management Page
+
+| Test                            | Expected                                                                                                                                  | Result |
+| ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | ------ |
+| Page title                      | Page title 'Product Management' is displayed.                                                                                             | Pass   |
+| Form for product management     | Form fields for product details (category, sku, name, etc.) are functional.                                                               | Pass   |
+| Checkboxes for vegan/vegetarian | Checkboxes for vegan/vegetarian work correctly.                                                                                           | Pass   |
+| Add/Edit product button         | Appropriate button (Add product/edit product) is displayed depending on whether adding or deleting a product. These function as expected. | Pass   |
+| Cancel button                   | Reverts back to the products page without making any changes.                                                                             | Pass   |
+
+### 404 Page
+
+| Test                  | Expected                                           | Result |
+| --------------------- | -------------------------------------------------- | ------ |
+| Message display       | Displays message ‘Sorry, this page doesn’t exist’. | Pass   |
+| Error image           | Displays the 404 error image correctly.            | Pass   |
+| Home page link/button | Link/Button directs the user to the home page.     | Pass   |
