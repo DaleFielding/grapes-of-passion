@@ -127,3 +127,20 @@ A large amount of the functionality comes from script within the boutique_ado pr
 | Line is longer than 80 characters          | Split long lines into shorter ones                                                                                                                                                    |
 | Use double quotes, not single quotes       | Changing the highlighted single quotes to double quotes                                                                                                                               |
 | Expected an identifier and instead saw `{` | Not corrected, unsure why `const dates = {{ dates_json  \| safe }};` is flagging as the function works as expected, do not want to cause this to change so I have left this as it is. |
+
+### CI Python Lynter
+
+I have run each of my Python files through the linter, there were quite a few changes to make to most files in order for these to pass, all have been corrected now. The warnings that appeared throughout are listed below:
+
+| Warning                                 | Corrected by                                                               |
+| --------------------------------------- | -------------------------------------------------------------------------- |
+| Lines over 80 characters                | Splitting into 2 or more lines, often including strings within parenthesis |
+| Continuation line under indented        | Adjusting the indentation                                                  |
+| Continuation line over indented         | Adjusting the indentation                                                  |
+| Variables declared but never used       | Removing these where appropriate                                           |
+| Handler404 has already been declared    | Removing import of handler404 as had a custom declaration for this         |
+| Expected 2 blank lines, found 1         | Adding an additional line where appropriate                                |
+| No newline at end of file               | Adding the newline at the end of the file                                  |
+| Various Django imports that were unused | Removing these as unnecessary                                              |
+| Do not use bare except                  | Importing Http404 to include after the except clause                       |
+| Too many blank lines                    | Reducing the amount of blank lines                                         |
