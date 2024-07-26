@@ -1,0 +1,22 @@
+[
+    {
+        "model": "wine_tasting.winetastingproduct",
+        "fields": {
+            "product_name": "Couples wine tasting",
+            "sku": "winetasting02",
+            "description": "Enjoy a special evening with your partner at our couples' wine tasting. Discover a selection of fine wines as our experts guide you through the nuances of tasting and identifying unique flavours and aromas. In a cosy, intimate setting, savour each glass and enjoy quality time together, making lasting memories in a relaxed and charming atmosphere.",
+            "price": "35.99",
+            "dates": "2024-08-03, 2024-09-07, 2024-10-05, 2024-11-02, 2024-12-07, 2025-01-04, 2025-02-01, 2025-03-01, 2025-04-05, 2025-05-03, 2025-06-07, 2025-07-05"
+        }
+    },
+    {
+        "model": "wine_tasting.winetastingproduct",
+        "fields": {
+            "product_name": "Group wine tasting",
+            "sku": "winetasting01",
+            "description": "Come together with friends, family, or colleagues for a memorable wine tasting event. Our friendly experts will guide you through a selection of wines, helping you discover different flavours and styles. You'll learn how to taste wine, identify its aromas. In a relaxed and enjoyable setting, you'll share good conversation and create lasting memories while exploring the world of wine.",
+            "price": "35.99",
+            "dates": "2024-07-27, 2024-08-31, 2024-09-28, 2024-10-26, 2024-11-30, 2024-12-28, 2025-01-25, 2025-02-22, 2025-03-29, 2025-04-26, 2025-05-31, 2025-06-28"
+        }
+    }
+]
