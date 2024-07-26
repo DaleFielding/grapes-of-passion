@@ -3,17 +3,19 @@ from .widgets import CustomClearableFileInput
 from .models import Product, Category
 
 
-# PRODUCT FORM - ADMIN 
+# PRODUCT FORM - ADMIN
 class ProductForm(forms.ModelForm):
     """
-    Django Form for the Product model to set category choices and custom styling.
+    Django Form for the Product model to set category choices
+    and custom styling.
     """
     class Meta:
         model = Product
         fields = '__all__'
 
     # Defines an optional image upload field with a custom file input widget.
-    image = forms.ImageField(label='Image', required=False, widget=CustomClearableFileInput)
+    image = forms.ImageField(label='Image', required=False,
+                             widget=CustomClearableFileInput)
 
     # Sets the category field choices to the list with the friendly names
     # Applies custom css class and custom label for region state

@@ -10,17 +10,17 @@ from .forms import ProductForm
 
 # ALL PRODUCTS
 def all_products(request):
-    """ 
+    """
     Handle the display of all wine products,
     including sorting and search queries
     """
-    
+
     # Get all products and set default values for variables
     products = Product.objects.all()
     query = None
     categories = None
     is_discounted = False
-    display_title = "All Products" 
+    display_title = "All Products"
     sort = None
     direction = None
 
@@ -53,11 +53,13 @@ def all_products(request):
             category = request.GET['category']
             if category in grouped_categories:
                 categories = grouped_categories[category]
-                display_title = "All Wine" if category == 'all-wine' else "All Fortified Wine"
+                display_title = "All Wine" if category == 'all-wine' else \
+                                "All Fortified Wine"
             else:
                 categories = [category]
-                display_title = Category.objects.get(name=category).name.capitalize()
-                
+                display_title = Category.objects.get(
+                    name=category).name.capitalize()
+
             products = products.filter(category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
 
@@ -66,14 +68,15 @@ def all_products(request):
         if 'query' in request.GET:
             query = request.GET['query']
             if not query:
-                messages.error(request, "You didn't enter any search criteria!")
+                messages.error(request,
+                               "You didn't enter any search criteria!")
                 return redirect(reverse('products'))
-                
+
             # Filter products by name or type)
             # Then assign query to display_title
             queries = Q(name__icontains=query) | Q(type__icontains=query)
             products = products.filter(queries)
-            display_title = f"Results for '{query}'" 
+            display_title = f"Results for '{query}'"
 
         # If the discounted parameter is in the get request,
         # filter by including products that are not discounted
@@ -81,7 +84,7 @@ def all_products(request):
         if 'discounted' in request.GET:
             is_discounted = True
             products = products.exclude(original_price__isnull=True)
-            display_title = "Discounted Products"  
+            display_title = "Discounted Products"
 
     # assign f string containing sort and direction to current_sorting
     current_sorting = f'{sort}_{direction}'
@@ -99,7 +102,6 @@ def all_products(request):
     return render(request, 'products/products.html', context)
 
 
-
 # PRODUCT DETAIL
 def product_detail(request, product_id):
     """ A view to show individual product details """
@@ -113,7 +115,7 @@ def product_detail(request, product_id):
 # ADD PRODUCT - ADMIN
 @login_required
 def add_product(request):
-    """ Add a product to the admin store, 
+    """ Add a product to the admin store,
     Handle form submission and feedback through messaging """
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
@@ -122,7 +124,8 @@ def add_product(request):
             messages.success(request, 'Successfully added product!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to add product. Please ensure the form is valid.')
+            messages.error(request, 'Failed to add product. '
+                           'Please ensure the form is valid.')
     else:
         form = ProductForm()
 
@@ -132,7 +135,6 @@ def add_product(request):
     }
 
     return render(request, template, context)
-
 
 
 # EDIT PRODUCT - ADMIN
@@ -147,7 +149,8 @@ def edit_product(request, product_id):
             messages.success(request, 'Successfully updated product!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to update product. Please ensure the form is valid.')
+            messages.error(request, 'Failed to update product. '
+                           'Please ensure the form is valid.')
     else:
         form = ProductForm(instance=product)
         messages.info(request, f'You are editing {product.name}')

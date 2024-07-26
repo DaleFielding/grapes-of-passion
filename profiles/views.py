@@ -7,6 +7,7 @@ from wine_tasting.models import WineTastingBooking
 from checkout.models import Order
 from datetime import datetime
 
+
 # PROFILE
 @login_required
 def profile(request):
@@ -16,7 +17,9 @@ def profile(request):
     # Added to adjust time displayed
     for booking in bookings:
         if booking.selected_date.time() == datetime.min.time():
-            booking.selected_date = booking.selected_date.replace(hour=19, minute=0)
+            booking.selected_date = booking.selected_date.replace(
+                hour=19, minute=0
+                )
 
     if request.method == 'POST':
         form = UserProfileForm(request.POST, instance=profile)
@@ -24,7 +27,8 @@ def profile(request):
             form.save()
             messages.success(request, 'Profile updated successfully')
         else:
-            messages.error(request, 'Update failed. Please ensure the form is valid.')
+            messages.error(request, 'Update failed. '
+                           'Please ensure the form is valid.')
     else:
         form = UserProfileForm(instance=profile)
     form = UserProfileForm(instance=profile)

@@ -6,12 +6,12 @@ from .models import Product
 class TestViews(TestCase):
     # Test product view
     def test_products_view(self):
-        response = self.client.get(reverse('products'))  
-        self.assertEqual(response.status_code, 200)  
-        self.assertTemplateUsed(response, 'products/products.html') 
+        response = self.client.get(reverse('products'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'products/products.html')
 
     # Load fixtures for the below test
-    fixtures = ['categories.json', 'products.json']  
+    fixtures = ['categories.json', 'products.json']
 
     # Test product detail view
     def test_product_detail_view(self):

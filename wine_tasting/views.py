@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, reverse
 from django.contrib import messages
-from .models import WineTastingProduct, WineTastingBooking
+from .models import WineTastingProduct
 from .forms import WineTastingForm
 import json
 
@@ -10,27 +10,38 @@ def wine_tasting(request):
         form = WineTastingForm(request.POST)
         if form.is_valid():
             if not request.user.is_authenticated:
-                messages.info(request, 'Please log in to book your experience.')
-                return redirect(f"{reverse('account_login')}?next={reverse('wine_tasting')}")
-            
+                messages.info(request,
+                              'Please log in to book your experience.')
+                return redirect(f"{reverse(
+                    'account_login')}?next={reverse('wine_tasting')}")
+
             booking = form.save(commit=False)
             booking.user = request.user
-            wine_tasting_product = WineTastingProduct.objects.get(id=booking.wine_tasting_product.id)
-            booking.total_price = wine_tasting_product.price * booking.number_of_people
+            wine_tasting_product = WineTastingProduct.objects.get(
+                id=booking.wine_tasting_product.id)
+            booking.total_price = (
+                wine_tasting_product.price * booking.number_of_people
+                )
             booking.save()
-            messages.success(request, 'Your booking was successful! This can now be viewed in your profile.')
+            messages.success(request, 'Your booking was successful! This '
+                                      'can now be viewed in your profile.')
             return redirect('wine_tasting')
     else:
         form_data = request.session.pop('form_data', None)
         form = WineTastingForm(form_data)
 
     wine_tastings = WineTastingProduct.objects.all()
-    dates_dict = {str(product.id): product.dates.split(',') for product in wine_tastings}
+    dates_dict = {str(product.id): product.dates.split(',')
+                  for product in wine_tastings}
     experiences_info = {
         str(product.id): {
             'name': product.product_name,
-            'min_quantity': 2 if 'couple' in product.product_name.lower() else 3,
-            'max_quantity': 2 if 'couple' in product.product_name.lower() else 12
+            'min_quantity': (
+                2 if 'couple' in product.product_name.lower() else 3
+            ),
+            'max_quantity': (
+                2 if 'couple' in product.product_name.lower() else 12
+            )
         } for product in wine_tastings
     }
     price = wine_tastings.first().price if wine_tastings else 0

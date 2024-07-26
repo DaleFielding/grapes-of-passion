@@ -3,6 +3,7 @@ from django.conf import settings
 from django.shortcuts import get_object_or_404
 from products.models import Product
 
+
 def basket_contents(request):
     """
     Return basket contents and totals for use in all templates
@@ -35,7 +36,7 @@ def basket_contents(request):
     while len(wine_items) >= 5:
         wine_items_sorted = sorted(wine_items, key=lambda item: item.price)
         discount += wine_items_sorted[0].price
-        wine_items = wine_items[5:] 
+        wine_items = wine_items[5:]
 
     if total < settings.FREE_DELIVERY_THRESHOLD:
         delivery = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)
@@ -43,9 +44,9 @@ def basket_contents(request):
     else:
         delivery = 0
         free_delivery_delta = 0
-    
+
     grand_total = total - discount + delivery
-    
+
     context = {
         'basket_items': basket_items,
         'total': total,
@@ -54,7 +55,7 @@ def basket_contents(request):
         'free_delivery_delta': free_delivery_delta,
         'free_delivery_threshold': settings.FREE_DELIVERY_THRESHOLD,
         'grand_total': grand_total,
-        'discount': discount, 
+        'discount': discount,
     }
 
     return context

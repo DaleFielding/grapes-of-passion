@@ -15,9 +15,9 @@ class CategoryModelTest(TestCase):
 
 
 class ProductModelTest(TestCase):
-    
-    # Specify the fixtures file to auto load the categories with Django 
-    fixtures = ['categories.json']  
+
+    # Specify the fixtures file to auto load the categories with Django
+    fixtures = ['categories.json']
 
     def test_product_creation(self):
         # Get category from fixtures

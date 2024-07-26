@@ -10,5 +10,6 @@ class WineTastingProductAdmin(admin.ModelAdmin):
 
 @admin.register(WineTastingBooking)
 class WineTastingBookingAdmin(admin.ModelAdmin):
-    list_display = ('wine_tasting_product', 'contact_number', 'selected_date', 'number_of_people')
+    list_display = ('wine_tasting_product', 'contact_number', 'selected_date',
+                    'number_of_people')
     search_fields = ('wine_tasting_product__product_name', 'contact_number')

@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
-from products.models import Product  
+from django.http import Http404
+from products.models import Product
 
 
 def get_random_product(exclude_pks):
@@ -8,7 +9,7 @@ def get_random_product(exclude_pks):
     """
     products = Product.objects.exclude(pk__in=exclude_pks)
     if not products.exists():
-        return None  
+        return None
     return products.order_by('?').first()
 
 
@@ -22,7 +23,7 @@ def index(request):
     for pk in product_pks:
         try:
             product = get_object_or_404(Product, pk=pk)
-        except:
+        except Http404:
             product = get_random_product([p.pk for p in products])
             if not product:
                 continue

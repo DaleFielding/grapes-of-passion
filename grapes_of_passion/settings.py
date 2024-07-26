@@ -27,8 +27,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = ['grapes-of-passion-37a9373e50d5.herokuapp.com',
-'8000-dalefieldin-grapesofpas-c7sa90tsxvm.ws.codeinstitute-ide.net',
-'localhost']
+                 '8000-dalefieldin-grapesofpas-c7sa90tsxvm.ws.codeinstitute-ide.net',  # noqa: E501
+                 'localhost']
 
 
 # Application definition
@@ -56,7 +56,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'storages'
 
-    
+
 ]
 
 MIDDLEWARE = [
@@ -86,13 +86,13 @@ TEMPLATES = [
             'context_processors': [
                 'django.template.context_processors.debug',
                 # added as required by allauth
-                'django.template.context_processors.request', 
+                'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 # further added
                 'basket.contexts.basket_contents',
                 'django.template.context_processors.media'
-                
+
             ],
         },
     },
@@ -143,13 +143,13 @@ if 'DATABASE_URL' in os.environ:
     DATABASES = {
         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
-else: 
+else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
     }
-}
 
 
 # Password validation
@@ -157,16 +157,16 @@ else:
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',  # noqa: E501
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',  # noqa: E501
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',  # noqa: E501
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',  # noqa: E501
     },
 ]
 
@@ -211,7 +211,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Added to prevent 500 errors during login on a deployed site.
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
-# AWS 
+# AWS
 if 'USE_AWS' in os.environ:
     # Cache control
     AWS_S3_OBJECT_PARAMETERS = {
@@ -238,7 +238,7 @@ if 'USE_AWS' in os.environ:
 
 # Trusted Origins
 CSRF_TRUSTED_ORIGINS = [
-    'https://8000-dalefieldin-grapesofpas-c7sa90tsxvm.ws.codeinstitute-ide.net',
+    'https://8000-dalefieldin-grapesofpas-c7sa90tsxvm.ws.codeinstitute-ide.net',  # noqa: E501
     'https://grapes-of-passion-37a9373e50d5.herokuapp.com/'
     ]
 
