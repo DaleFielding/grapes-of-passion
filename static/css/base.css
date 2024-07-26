@@ -305,6 +305,11 @@ input[name="q"]::placeholder {
     cursor: pointer;
 }
 
+/* ----- Other ----- */
+.strike-through {
+    text-decoration: line-through;
+}
+
 /* ----- MEDIA QUERIES ----- */
 
 @media (min-width: 1200px) {
