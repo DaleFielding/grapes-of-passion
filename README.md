@@ -536,3 +536,216 @@ The colour scheme is relatively simple, I have used:
 5. Pagination to be included to reduce the amount of products that are displayed on the page.
 6. Online payment processing to be available for Wine Tasting Bookings.
 7. More robust form validation in order prevent form submissions when required fields are incomplete.
+
+### Deployment
+
+The project was deployed using Heroku. The steps for deployment are below:
+
+#### Create the Live Database
+
+1. Go to [ElephantSQL](https://www.elephantsql.com/), create a new instance, name it, select the tiny turtle plan, choose the closest region, and create the instance.
+2. Select the database just created and copy the URL.<br>
+
+Note, ElephantSQL has come to the end of its life now. So another provider will be needed.
+
+#### Heroku app setup
+
+1. From the [Heroku dashboard](https://dashboard.heroku.com/), create a new app, name it, select the closest region, and create the app.
+2. In the settings tab, create a new config var `DATABASE_URL` and paste the database URL from ElephantSQL.
+
+#### GitPod setup
+
+1. Install dj_database_url and psycopg2:
+
+    ```bash
+    pip3 install dj_database_url==0.5.0 psycopg2
+    ```
+
+2. Update requirements.txt:
+
+    ```bash
+    pip3 freeze > requirements.txt
+    ```
+
+3. In settings.py, add `import dj_database_url` under `import os`.
+
+4. Comment out the current `DATABASES` section and add:
+
+    ```python
+    DATABASES = {
+        'default': dj_database_url.parse('paste-elephantsql-db-url-here')
+    }
+    ```
+
+5. Confirm the connection:
+
+    ```bash
+    python3 manage.py runserver
+    ```
+
+6. Run migrations:
+
+    ```bash
+    python3 manage.py migrate
+    ```
+
+7. Create a superuser:
+
+    ```bash
+    python3 manage.py createsuperuser
+    ```
+
+8. Verify the user in the auth_user table on ElephantSQL.
+
+9. Update `DATABASES` in settings.py:
+
+    ```python
+    if 'DATABASE_URL' in os.environ:
+        DATABASES = {
+          'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+        }
+    else:
+        DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.sqlite3',
+                'NAME': os.path.join(BASE_DIR, 'db.sqlite3')
+          }
+        }
+    ```
+
+10. Install gunicorn and update requirements.txt:
+
+    ```bash
+    pip3 install gunicorn
+    pip3 freeze > requirements.txt
+    ```
+
+11. Create a `Procfile` in the root directory:
+
+    ```Procfile
+    web: gunicorn grapes_of_passion.wsgi:application
+    ```
+
+12. Log into the Heroku CLI and disable collectstatic:
+
+    ```bash
+    heroku config:set DISABLE_COLLECTSTATIC=1 --app heroku-app-name-here
+    ```
+
+    Note, this is temporary as we will want to enable collectstatic when we are ready to display our static images to the site.
+
+13. Update ALLOWED_HOSTS in settings.py:
+
+    ```python
+    ALLOWED_HOSTS = ['{heroku deployed site URL here}', 'localhost' ]
+    ```
+
+14. Commit and push changes to GitHub. Initialize the Heroku git remote and push to Heroku:
+
+    ```bash
+    heroku git:remote -a {app name here}
+    git push heroku main
+    ```
+
+15. Check the deployed site.
+
+16. Enable automatic deploys on Heroku by connecting to GitHub in the deploy tab.
+
+#### Generate a SECRET KEY & Update Debug settings
+
+1. Use [Django Secret Key Generator](https://miniwebtool.com/django-secret-key-generator/) to create a new SECRET_KEY.
+2. In Heroku settings, create a new config var `SECRET_KEY` with the generated key.
+3. Update `SECRET_KEY` in settings.py:
+
+    ```python
+    SECRET_KEY = os.environ.get('SECRET_KEY', ' ')
+    ```
+
+4. Update `DEBUG` in settings.py:
+
+    ```python
+    DEBUG = 'DEVELOPMENT' in os.environ
+    ```
+
+5. Save, commit, and push changes.
+
+#### Set up AWS hosting for static and media files
+
+1. Login to [AWS](https://aws.amazon.com), create an S3 bucket, name it, select the closest region, enable ACLs, and make the bucket public.
+2. Enable static web hosting, set index.html and error.html as documents.
+3. Copy the ARN, create a bucket policy with `/*` at the end of the resource value, and save.
+4. Edit CORS configuration:
+
+    ```json
+    [
+        {
+            "AllowedHeaders": ["Authorization"],
+            "AllowedMethods": ["GET"],
+            "AllowedOrigins": ["*"],
+            "ExposeHeaders": []
+        }
+    ]
+    ```
+
+5. Enable public access in the ACL section.
+
+#### Creating AWS groups, policies, and users
+
+1. Navigate to IAM, create a user group (e.g., manage-grapes-of-passion).
+2. Create a policy with AmazonS3FullAccess, restrict it to your ARN and ARN with `/*`.
+3. Attach the policy to the group.
+4. Create a user, give programmatic access, and download the CSV file with access keys.
+
+#### Connecting Django to our S3 bucket
+
+1. Install boto3 and django storages:
+
+    ```bash
+    pip3 install boto3 django-storages
+    pip3 freeze > requirements.txt
+    ```
+
+2. Add `storages` to installed apps in settings.py.
+3. Add the following to settings.py:
+
+    ```python
+    if 'USE_AWS' in os.environ:
+        AWS_S3_OBJECT_PARAMETERS = {
+            'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+            'CacheControl': 'max-age=9460800',
+        }
+        AWS_STORAGE_BUCKET_NAME = 'enter your bucket name here'
+        AWS_S3_REGION_NAME = 'enter the region you selected here'
+        AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+        AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+        AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+    ```
+
+4. Add AWS keys to Heroku config vars.
+5. Remove the DISABLE_COLLECTSTATIC variable.
+6. Create custom_storages.py for static and media file storage.
+7. Update settings.py for static and media files:
+
+    ```python
+    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+    STATICFILES_LOCATION = 'static'
+    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+    MEDIAFILES_LOCATION = 'media'
+    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+    ```
+
+8. Commit and push changes to deploy to Heroku. Verify static files in S3 bucket.
+9. Create a media folder in your S3 bucket.
+
+#### Setting up Stripe
+
+1. Add Stripe keys to Heroku config vars: `STRIPE_PUBLIC_KEY` and `STRIPE_SECRET_KEY`.
+2. Add the WebHook endpoint in Stripe and create the WebHook signing secret in Heroku config vars as `STRIPE_WH_SECRET`.
+3. Update settings.py:
+
+    ```python
+    STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
+    STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
+    STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
+    ```
