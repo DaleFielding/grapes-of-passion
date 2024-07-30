@@ -749,3 +749,54 @@ Note, ElephantSQL has come to the end of its life now. So another provider will 
     STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
     STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
     ```
+
+## Technologies Used
+
+### Languages Used
+
+-   [HTML5](https://en.wikipedia.org/wiki/HTML5)
+-   [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+-   [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
+-   [JQuery](https://en.wikipedia.org/wiki/JQuery)
+-   [Python](<https://en.wikipedia.org/wiki/Python_(programming_language)>>)
+-   [Django](<https://en.wikipedia.org/wiki/Django_(web_framework)>>)
+-   [SQLAlchemy](https://en.wikipedia.org/wiki/SQLAlchemy)
+-   [PostgresSQL](https://en.wikipedia.org/wiki/PostgreSQL)
+-   [AWS](https://en.wikipedia.org/wiki/Amazon_Web_Services)
+
+### Frameworks, Libraries & Programs Used
+
+-   [Bootstrap 4.4.1](https://getbootstrap.com/docs/4.4/getting-started/introduction/)
+    -   Bootstrap was used to assist with the responsiveness of all pages.
+-   [Font Awesome](https://fontawesome.com/)
+    -   Font Awesome was for various icons throughout the site .
+-   [Google Fonts](https://fonts.google.com/)
+    -   Google fonts were used to import the chosen fonts that were used throughout the webpages.
+-   [Git](https://git-scm.com/)
+    -   Git was used for version control to commit to Git and Push to GitHub.
+-   [GitHub](https://github.com/)
+    -   GitHub is used to store the project’s code after being pushed from Git.
+-   [Gitpod (CI profile)](https://codeinstitute-ide.net/workspaces)
+    -   Gitpod was used as the IDE for developing the site and documentation.
+-   [Figma](https://www.figma.com/login?is_not_gen_0=true)
+    -   Figma was used to complete further wireframes for mobile, tablet and desktop pages. Also the database table schema.
+-   [Designer](https://designer.microsoft.com/)
+    -   Designer was used to create the logo and the images for the deals that are displayed on the homepage.
+-   [Adobe Stock](https://stock.adobe.com/uk/)
+    -   Aodbe Stock as used to obtain the main background image on the homepage, images for the individual bottles of wine and the two images that are on the wine tasting page.
+-   [Flatpickr](https://flatpickr.js.org/)
+    -   Flatpickr was used as the chosen datetime picker within the wine tasting booking form.
+
+## Code
+
+### Templates
+
+[Bootstrap Library](https://getbootstrap.com/docs/4.4/getting-started/introduction/ "link to Bootstrap Docs"): - Has been used through the project to assist with making the pages responsive. - I have used some template code from Bootstrap documentation, such as the forms, modals and navbar. - I have made amendments to these in order to suit the chosen design for the website.
+
+## Acknowledgements
+
+-   Mitko Bachvarov - My Code Institute Mentor for helpful feedback.
+
+-   Paul Bowers - My Course tutor for their useful tutorial sessions
+
+-   Laura Gibbons - My partner for her user feedback
