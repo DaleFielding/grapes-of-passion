@@ -70,6 +70,10 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+# Temporary for testing
+X_FRAME_OPTIONS = 'ALLOWALL' 
+
+
 ROOT_URLCONF = 'grapes_of_passion.urls'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
