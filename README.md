@@ -4,7 +4,7 @@ Website to be created for a fictional independent wine seller focused on enhanci
 
 ### [View the live project here](https://grapes-of-passion-37a9373e50d5.herokuapp.com/)
 
-![Mockup for grapes of passion site...To be added]()
+![Mockup for grapes of passion site](resources/am-i-responsive.png)
 
 ## User Experience (UX)
 
@@ -63,26 +63,26 @@ The strategy for this site is to include a wide range of features that users wou
 
 #### Sites Researched:
 
--   [Averys](https://averys.com/)
--   [Laithwaites](https://www.laithwaites.co.uk/)
--   [The Great Wine Co.](https://greatwine.co.uk/)
--   [Kask](https://www.kaskwine.co.uk/)
--   [Cave Bristol](https://www.cavebristol.co.uk/)
+- [Averys](https://averys.com/)
+- [Laithwaites](https://www.laithwaites.co.uk/)
+- [The Great Wine Co.](https://greatwine.co.uk/)
+- [Kask](https://www.kaskwine.co.uk/)
+- [Cave Bristol](https://www.cavebristol.co.uk/)
 
 #### General Findings:
 
--   Logos are typically in the top left, with a search function and basket icon in the top right.
--   Navigation includes dropdown menus for categories such as; Offers, Wine, Mixed Cases, Champagne & Sparkling, Subscriptions/Clubs, Gifts, About/About Us, Contact info, Events, and Reservations. These expand into subcategories.
--   Eye-catching background images or videos are common.
--   Incentives/offers are frequently displayed.
--   Products and categories are presented in grids and buttons further down the pages.
--   Clicking on the products will direct to a product details page, providing more information and option to add to basket.
--   Viewing basket/checking out contains total, subtotal, delivery information and payment options.
--   When searching or selecting categories, further options are presented to filter/organise the displayed products.
--   Selecting events/reservations will inform users of dates and/or allow them to select available dates through a calendar/booking system.
--   Some sites display ratings, awards, and offer features such as chat support, newsletters, and blogs.
--   Footers include FAQs, delivery info, contact details, T&Cs, copyright, social links, and privacy policies.
--   Site styles are mostly bright/white with contrasting colours for emphasis.
+- Logos are typically in the top left, with a search function and basket icon in the top right.
+- Navigation includes dropdown menus for categories such as; Offers, Wine, Mixed Cases, Champagne & Sparkling, Subscriptions/Clubs, Gifts, About/About Us, Contact info, Events, and Reservations. These expand into subcategories.
+- Eye-catching background images or videos are common.
+- Incentives/offers are frequently displayed.
+- Products and categories are presented in grids and buttons further down the pages.
+- Clicking on the products will direct to a product details page, providing more information and option to add to basket.
+- Viewing basket/checking out contains total, subtotal, delivery information and payment options.
+- When searching or selecting categories, further options are presented to filter/organise the displayed products.
+- Selecting events/reservations will inform users of dates and/or allow them to select available dates through a calendar/booking system.
+- Some sites display ratings, awards, and offer features such as chat support, newsletters, and blogs.
+- Footers include FAQs, delivery info, contact details, T&Cs, copyright, social links, and privacy policies.
+- Site styles are mostly bright/white with contrasting colours for emphasis.
 
 Need to sort scope, have only copy and pasted it from Bonsay Bay, so far.
 
@@ -132,13 +132,13 @@ I have listed the possible features below and ranked 1-5 in level of importance/
 
 As some of these features extend beyond the necessary requirements for the project and may take more time than appropriate, I will not currently be implementing:
 
--   Location Finding.
--   Breadcrumb Navigation.
--   Ability to view/rate products.
--   Ability to save items as favourites/wish list.
--   Subscriptions/loyalty points.
--   Contact form.
--   Blog.
+- Location Finding.
+- Breadcrumb Navigation.
+- Ability to view/rate products.
+- Ability to save items as favourites/wish list.
+- Subscriptions/loyalty points.
+- Contact form.
+- Blog.
 
 ### Structure
 
@@ -146,124 +146,124 @@ I have listed the pages below including the intended features.
 
 #### All pages:
 
--   Navbar:
-    -   Logo, clicking on this will reload the home page.
-    -   Search button that opens search bar below allowing users to search products.
-    -   Login/register/account button.
-    -   Basket button allowing users to view items in their basket.
-    -   Navigation by categories and sub categories:
-        -   Offers:
-        -   Wine:
-            -   Style.
-            -   Country.
-            -   Region.
-            -   Grape.
-        -   Fortified Wine:
-            -   Port.
-            -   Sherry.
-            -   Madiera.
-            -   Vermouth.
-        -   Wine Tasting
--   Banner displaying free delivery criteria.
--   Footer:
-    -   Social media links.
-    -   Contact information.
-    -   Categories for navigation (as above).
-    -   Logo.
+- Navbar:
+  - Logo, clicking on this will reload the home page.
+  - Search button that opens search bar below allowing users to search products.
+  - Login/register/account button.
+  - Basket button allowing users to view items in their basket.
+  - Navigation by categories and sub categories:
+    - Offers:
+    - Wine:
+      - Style.
+      - Country.
+      - Region.
+      - Grape.
+    - Fortified Wine:
+      - Port.
+      - Sherry.
+      - Madiera.
+      - Vermouth.
+    - Wine Tasting
+- Banner displaying free delivery criteria.
+- Footer:
+  - Social media links.
+  - Contact information.
+  - Categories for navigation (as above).
+  - Logo.
 
 #### Homepage:
 
--   Background image.
--   Company name displayed on top of image (offset).
--   Recommended wines section.
--   Wine tasting section.
--   Various offers section.
+- Background image.
+- Company name displayed on top of image (offset).
+- Recommended wines section.
+- Wine tasting section.
+- Various offers section.
 
 #### Product/Query Page
 
--   Product/Query displays as the title.
--   Button to filter, with a link to clear these filters also.
--   Button to sort by certain criteria.
--   Products displayed:
-    -   Image.
-    -   A few product details.
-    -   Price.
-    -   Button to add to basket.
-    -   Ability to select quantity.
--   Pagination with arrows to navigate next and previous.
+- Product/Query displays as the title.
+- Button to filter, with a link to clear these filters also.
+- Button to sort by certain criteria.
+- Products displayed:
+  - Image.
+  - A few product details.
+  - Price.
+  - Button to add to basket.
+  - Ability to select quantity.
+- Pagination with arrows to navigate next and previous.
 
 #### Product Details Page
 
--   Product name displayed.
--   Product image.
--   More details displayed.
--   Description of product.
--   Price.
--   Button to add to basket.
--   Ability to select quantity.
+- Product name displayed.
+- Product image.
+- More details displayed.
+- Description of product.
+- Price.
+- Button to add to basket.
+- Ability to select quantity.
 
 #### Wine Tasting Page
 
--   Title = Wine Tasting Experience.
--   Wine tasting products displayed:
-    -   Image.
-    -   Product Name.
-    -   Description.
-    -   Price.
--   Form and datepicker, allowing user to book and experience.
+- Title = Wine Tasting Experience.
+- Wine tasting products displayed:
+  - Image.
+  - Product Name.
+  - Description.
+  - Price.
+- Form and datepicker, allowing user to book and experience.
 
 #### Basket Page
 
--   Title = Basket.
--   Display products that are in the basket.
--   Include; product images, names, individual price and total price for the product.
--   Functionality to amend quantity or remove product.
--   Basket total, delivery costs and grandtotal.
--   Button to proceed to secure check out.
+- Title = Basket.
+- Display products that are in the basket.
+- Include; product images, names, individual price and total price for the product.
+- Functionality to amend quantity or remove product.
+- Basket total, delivery costs and grandtotal.
+- Button to proceed to secure check out.
 
 #### Checkout page
 
--   Title = Checkout.
--   Form for user to enter their name, email, delivery address, and card details for payment.
--   Order summary; product name, image, qty and subtotal.
--   Basket total, delivery costs and grand total.
--   Button to complete order.
--   Button to adjust basket.
+- Title = Checkout.
+- Form for user to enter their name, email, delivery address, and card details for payment.
+- Order summary; product name, image, qty and subtotal.
+- Basket total, delivery costs and grand total.
+- Button to complete order.
+- Button to adjust basket.
 
 #### Register Page
 
--   Title = Register.
--   Form for user to enter; email address, confirm email, username, password, confirm password.
--   Button to complete registration.
--   Button to go back to login.
+- Title = Register.
+- Form for user to enter; email address, confirm email, username, password, confirm password.
+- Button to complete registration.
+- Button to go back to login.
 
 #### Sign In Page
 
--   Title = Sign in.
--   Form for user to enter their; username/email and password.
--   Link for 'Forgot password'.
--   Remember Me checkbox.
--   Button to sign in.
--   Button to return to Home.
+- Title = Sign in.
+- Form for user to enter their; username/email and password.
+- Link for 'Forgot password'.
+- Remember Me checkbox.
+- Button to sign in.
+- Button to return to Home.
 
 #### Profile Page
 
--   Title = Your Profile.
--   Form to add default delivery information.
--   Order History; Order no, date, order total, items.
--   Button to update information.
+- Title = Your Profile.
+- Form to add default delivery information.
+- Order History; Order no, date, order total, items.
+- Button to update information.
 
 #### Product Management Page
 
--   Title = Product management.
--   Form including all necessary fields to complete relating to the product being added/edited.
--   Button to add/edit product.
--   Button to cancel.
+- Title = Product management.
+- Form including all necessary fields to complete relating to the product being added/edited.
+- Button to add/edit product.
+- Button to cancel.
 
 #### 404 Page
 
--   Message displayed confirming user has tried to visit a page in the domain that does not exist.
--   Link/button within the page content that will direct the user to the home page.
+- Message displayed confirming user has tried to visit a page in the domain that does not exist.
+- Link/button within the page content that will direct the user to the home page.
 
 ### Skeleton
 
@@ -361,171 +361,171 @@ I have chosen a combination of google fonts “Playfair Display” for the large
 ![colour scheme](resources/colour-scheme.png)<br>
 The colour scheme is relatively simple, I have used:
 
--   A shade of maroon for the navigation and dropdown backgrounds, with a white font colour.
--   White for the general background, I had intended to use a darker colour however during build I realised that the white background does compliment the product images much better.
--   Charcoal for the general font and also the background for the free delivery banner.
--   Black for the buttons and to make certain font stand out more.
--   A shade of grey for the background of the footer to differentiate between the rest of the content
-    > The chosen colour scheme meets the Web Content Accessibility Guidelines for readability.
+- A shade of maroon for the navigation and dropdown backgrounds, with a white font colour.
+- White for the general background, I had intended to use a darker colour however during build I realised that the white background does compliment the product images much better.
+- Charcoal for the general font and also the background for the free delivery banner.
+- Black for the buttons and to make certain font stand out more.
+- A shade of grey for the background of the footer to differentiate between the rest of the content
+  > The chosen colour scheme meets the Web Content Accessibility Guidelines for readability.
 
 ### Features
 
 #### General:
 
--   Responsive on all devices
--   Toasts are displayed to the user to indicate:
-    -   Alerts, errors, successes.
-    -   They also display information regarding the products in the basket
+- Responsive on all devices
+- Toasts are displayed to the user to indicate:
+  - Alerts, errors, successes.
+  - They also display information regarding the products in the basket
 
 #### All pages:
 
--   Navbar:
-    -   Logo, clicking on this reloads the home page.
-    -   Search bar allowing users to search products. This collapses into a search icon on small devices, where the search bar will reappear when the icon is clicked.
-    -   My Account icon/link. When clicked this displays a dropdown menu:
--   If not logged in this displays; register, login
--   If logged in this displays; product management (if admin/superuser), logout and my profile
--   Basket icon that displays the total price of items in the basket
--   Main Navigation by categories and subcategories.:
-    -   Offers:
-        -   Deals.
-        -   Discounts.
-    -   Wine:
-        -   Red.
-        -   White.
-        -   Rose.
-        -   View all.
-    -   Fortified Wine:
-        -   Port.
-        -   Sherry.
-        -   View all.`
-        -   Wine Tasting
--   When the categories/subcategories are clicked the user will be taken to either; the relevant section on the homepage, the products page based on the appropriate query, or the wine tasting page.
--   Banner displaying free delivery criteria.
--   Footer:
-    -   Social media links.
-    -   Company name, address, contact number, email and Google link for directions.
-    -   Categories for navigation (as above).
-    -   Logo.
-    -   Copyright 2024.
+- Navbar:
+  - Logo, clicking on this reloads the home page.
+  - Search bar allowing users to search products. This collapses into a search icon on small devices, where the search bar will reappear when the icon is clicked.
+  - My Account icon/link. When clicked this displays a dropdown menu:
+- If not logged in this displays; register, login
+- If logged in this displays; product management (if admin/superuser), logout and my profile
+- Basket icon that displays the total price of items in the basket
+- Main Navigation by categories and subcategories.:
+  - Offers:
+    - Deals.
+    - Discounts.
+  - Wine:
+    - Red.
+    - White.
+    - Rose.
+    - View all.
+  - Fortified Wine:
+    - Port.
+    - Sherry.
+    - View all.`
+    - Wine Tasting
+- When the categories/subcategories are clicked the user will be taken to either; the relevant section on the homepage, the products page based on the appropriate query, or the wine tasting page.
+- Banner displaying free delivery criteria.
+- Footer:
+  - Social media links.
+  - Company name, address, contact number, email and Google link for directions.
+  - Categories for navigation (as above).
+  - Logo.
+  - Copyright 2024.
 
 #### Homepage:
 
--   Background image:
-    -   Takes up the full width of the page.
-    -   Company name displayed on top of image, including message ‘Scroll to Explore’.
--   Recommended wines section
-    -   Displays 4 bottles of wine in a grid, including images, product name and price
--   Wine tasting section.
-    -   Displays an image of a couple enjoying wine.
-    -   A welcoming message ‘Indulge in Our Exquisite Wine Tasting Experience
-    -   A button ‘Discover More’, when clicked this directs to the wine tasting page.
--   Offers section:
-    -   Displays a grid of 3 images of the offers that are available.
+- Background image:
+  - Takes up the full width of the page.
+  - Company name displayed on top of image, including message ‘Scroll to Explore’.
+- Recommended wines section
+  - Displays 4 bottles of wine in a grid, including images, product name and price
+- Wine tasting section.
+  - Displays an image of a couple enjoying wine.
+  - A welcoming message ‘Indulge in Our Exquisite Wine Tasting Experience
+  - A button ‘Discover More’, when clicked this directs to the wine tasting page.
+- Offers section:
+  - Displays a grid of 3 images of the offers that are available.
 
 #### Product/Query Page
 
--   Product/Query displays as the title.
--   A paragraph indicating how many results have been found and a link to ‘View All Products
--   Button to sort by certain criteria; price, discount, name and category.
--   Products displayed in a grid:
-    -   These display; product image, price + original price (if discounted).
-    -   When the image is clicked that opens up the product details page for that product
--   A button that directs the user back to the top of the page
+- Product/Query displays as the title.
+- A paragraph indicating how many results have been found and a link to ‘View All Products
+- Button to sort by certain criteria; price, discount, name and category.
+- Products displayed in a grid:
+  - These display; product image, price + original price (if discounted).
+  - When the image is clicked that opens up the product details page for that product
+- A button that directs the user back to the top of the page
 
 #### Product Details Page
 
--   Larger product image.
--   Product name with a couple product details below that; grape + country.
--   Detailed description of product.
--   Price.
--   Ability to select quantity.
--   Button to add to basket.
--   More details displayed below; grape, style, country, region/state, unit volume, alcohol percentage, year. Also displays confirmation on whether the product is vegetarian or vegan.
--   There is a link below to return back to products
+- Larger product image.
+- Product name with a couple product details below that; grape + country.
+- Detailed description of product.
+- Price.
+- Ability to select quantity.
+- Button to add to basket.
+- More details displayed below; grape, style, country, region/state, unit volume, alcohol percentage, year. Also displays confirmation on whether the product is vegetarian or vegan.
+- There is a link below to return back to products
 
 #### Wine Tasting Page
 
--   Displays page title
--   Wine tasting products displayed in an alternate grid:
-    -   Wine tasting experience title is displayed
-    -   A description of the experience
-    -   Images of the particular experience
--   Below that there is a form for the user to fill in which contains:
-    -   A select box to choose the experience
-    -   A contact number field for the user to include their telephone number
-    -   A text field for the user to enter and special requirements they might have; dietary, accessibility, etc.
-    -   A datepicker (using Flatpicker) allowing the user to select the available dates for the particular experience
-    -   A quantity field to select the number of people the booking will be for.
-        -   For the group wine tasting the number of people will be a minimum of 3 up to a maximum of 12
-        -   For the couples wine tasting this will be limited to 2 and only 2.
--   Price is displayed (per person)
--   Total price is updated automatically based on the number of people. It is noted that the user will pay for this experience on the day
--   The booking is confirmed when the user clicks ‘Confirm Reservation’. Note they will be redirected to the login page if they are not currently logged in.
+- Displays page title
+- Wine tasting products displayed in an alternate grid:
+  - Wine tasting experience title is displayed
+  - A description of the experience
+  - Images of the particular experience
+- Below that there is a form for the user to fill in which contains:
+  - A select box to choose the experience
+  - A contact number field for the user to include their telephone number
+  - A text field for the user to enter and special requirements they might have; dietary, accessibility, etc.
+  - A datepicker (using Flatpicker) allowing the user to select the available dates for the particular experience
+  - A quantity field to select the number of people the booking will be for.
+    - For the group wine tasting the number of people will be a minimum of 3 up to a maximum of 12
+    - For the couples wine tasting this will be limited to 2 and only 2.
+- Price is displayed (per person)
+- Total price is updated automatically based on the number of people. It is noted that the user will pay for this experience on the day
+- The booking is confirmed when the user clicks ‘Confirm Reservation’. Note they will be redirected to the login page if they are not currently logged in.
 
 #### Basket Page
 
--   Displays page time Basket.
--   Display products that are in the basket including; product image, name, individual price and total price based on the number of that particular product.
--   There is functionality to update quantity or remove a product.
--   Displays Basket total, delivery costs, any discounts from deals that they have qualified for and grand total.
--   A message that confirms they can get free delivery if they haven’t by spending x amount.
--   Button to proceed to secure check out.
+- Displays page time Basket.
+- Display products that are in the basket including; product image, name, individual price and total price based on the number of that particular product.
+- There is functionality to update quantity or remove a product.
+- Displays Basket total, delivery costs, any discounts from deals that they have qualified for and grand total.
+- A message that confirms they can get free delivery if they haven’t by spending x amount.
+- Button to proceed to secure check out.
 
 #### Checkout page
 
--   Displays page title Checkout.
--   Form for the user to enter their name, email, delivery address, and card details for payment.
--   Order summary which displays:
-    -   Products, product name, image, qty and subtotal
-    -   Basket total, delivery costs and grand total.
--   Button to ‘Complete Order’. This will then trigger the Stripe payment process
--   Button to ‘Adjust Basket’.
+- Displays page title Checkout.
+- Form for the user to enter their name, email, delivery address, and card details for payment.
+- Order summary which displays:
+  - Products, product name, image, qty and subtotal
+  - Basket total, delivery costs and grand total.
+- Button to ‘Complete Order’. This will then trigger the Stripe payment process
+- Button to ‘Adjust Basket’.
 
 #### Register Page
 
--   Displays the page title Register.
--   A message directing user to login if they already have an account
--   Form for user to enter; email address, confirm email, username, password, confirm password.
--   Button ‘Register’ to complete registration.
--   Button that directs the user ‘Back to Login’.
+- Displays the page title Register.
+- A message directing user to login if they already have an account
+- Form for user to enter; email address, confirm email, username, password, confirm password.
+- Button ‘Register’ to complete registration.
+- Button that directs the user ‘Back to Login’.
 
 #### Sign In Page
 
--   Displays the title 'Sign in'.
--   A message directing user to 'Sign up' if they do not already have an account
--   Form for the user to enter their; username/email and password.
--   Remember Me checkbox to remember the user’s details.
--   Button to ‘Sign in’.
--   Button to return to ‘Home’.
--   Link for 'Forgot password?'.
+- Displays the title 'Sign in'.
+- A message directing user to 'Sign up' if they do not already have an account
+- Form for the user to enter their; username/email and password.
+- Remember Me checkbox to remember the user’s details.
+- Button to ‘Sign in’.
+- Button to return to ‘Home’.
+- Link for 'Forgot password?'.
 
 #### Profile Page
 
--   Displays the title My Profile.
--   Default Delivery Information section:
-    -   Form to add default delivery information.
-    -   Button to update information.
--   Order History section containing table of previous order which display:
-    -   Order no date, order total, items.
-    -   Order no contains a link that directs the user to the previous order confirmation to view more details.
--   Wine Tasting Bookings section, containing tables of bookings made which display:
-    -   Experience booked, date booking if for, number of guests, and price.
+- Displays the title My Profile.
+- Default Delivery Information section:
+  - Form to add default delivery information.
+  - Button to update information.
+- Order History section containing table of previous order which display:
+  - Order no date, order total, items.
+  - Order no contains a link that directs the user to the previous order confirmation to view more details.
+- Wine Tasting Bookings section, containing tables of bookings made which display:
+  - Experience booked, date booking if for, number of guests, and price.
 
 #### Product Management Page
 
--   Displays the title Product Management.
--   A Form including:
-    -   all necessary fields to complete relating to the product being added/edited; category, sku, name, description, price, discount, original price, grapes, country, unit volume, type, alcohol percentage, region/state, style, image, year
-    -   Checkboxes to select whether the product is vegan or is vegetarian
--   Button to add/edit product.
--   Button to cancel.
+- Displays the title Product Management.
+- A Form including:
+  - all necessary fields to complete relating to the product being added/edited; category, sku, name, description, price, discount, original price, grapes, country, unit volume, type, alcohol percentage, region/state, style, image, year
+  - Checkboxes to select whether the product is vegan or is vegetarian
+- Button to add/edit product.
+- Button to cancel.
 
 #### 404 Page
 
--   Displays the message ‘Sorry, this page doesn’t exist’.
--   Image that displays the the 404 error.
--   Link/button within the page content that will direct the user to the home page.
+- Displays the message ‘Sorry, this page doesn’t exist’.
+- Image that displays the the 404 error.
+- Link/button within the page content that will direct the user to the home page.
 
 ### Future implementations
 
@@ -557,61 +557,61 @@ Note, ElephantSQL has come to the end of its life now. So another provider will 
 
 1. Install dj_database_url and psycopg2:
 
-    ```bash
-    pip3 install dj_database_url==0.5.0 psycopg2
-    ```
+   ```bash
+   pip3 install dj_database_url==0.5.0 psycopg2
+   ```
 
 2. Update requirements.txt:
 
-    ```bash
-    pip3 freeze > requirements.txt
-    ```
+   ```bash
+   pip3 freeze > requirements.txt
+   ```
 
 3. In settings.py, add `import dj_database_url` under `import os`.
 
 4. Comment out the current `DATABASES` section and add:
 
-    ```python
-    DATABASES = {
-        'default': dj_database_url.parse('paste-elephantsql-db-url-here')
-    }
-    ```
+   ```python
+   DATABASES = {
+       'default': dj_database_url.parse('paste-elephantsql-db-url-here')
+   }
+   ```
 
 5. Confirm the connection:
 
-    ```bash
-    python3 manage.py runserver
-    ```
+   ```bash
+   python3 manage.py runserver
+   ```
 
 6. Run migrations:
 
-    ```bash
-    python3 manage.py migrate
-    ```
+   ```bash
+   python3 manage.py migrate
+   ```
 
 7. Create a superuser:
 
-    ```bash
-    python3 manage.py createsuperuser
-    ```
+   ```bash
+   python3 manage.py createsuperuser
+   ```
 
 8. Verify the user in the auth_user table on ElephantSQL.
 
 9. Update `DATABASES` in settings.py:
 
-    ```python
-    if 'DATABASE_URL' in os.environ:
-        DATABASES = {
-          'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-        }
-    else:
-        DATABASES = {
-            'default': {
-                'ENGINE': 'django.db.backends.sqlite3',
-                'NAME': os.path.join(BASE_DIR, 'db.sqlite3')
-          }
-        }
-    ```
+   ```python
+   if 'DATABASE_URL' in os.environ:
+       DATABASES = {
+         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+       }
+   else:
+       DATABASES = {
+           'default': {
+               'ENGINE': 'django.db.backends.sqlite3',
+               'NAME': os.path.join(BASE_DIR, 'db.sqlite3')
+         }
+       }
+   ```
 
 10. Install gunicorn and update requirements.txt:
 
@@ -657,15 +657,15 @@ Note, ElephantSQL has come to the end of its life now. So another provider will 
 2. In Heroku settings, create a new config var `SECRET_KEY` with the generated key.
 3. Update `SECRET_KEY` in settings.py:
 
-    ```python
-    SECRET_KEY = os.environ.get('SECRET_KEY', ' ')
-    ```
+   ```python
+   SECRET_KEY = os.environ.get('SECRET_KEY', ' ')
+   ```
 
 4. Update `DEBUG` in settings.py:
 
-    ```python
-    DEBUG = 'DEVELOPMENT' in os.environ
-    ```
+   ```python
+   DEBUG = 'DEVELOPMENT' in os.environ
+   ```
 
 5. Save, commit, and push changes.
 
@@ -676,16 +676,16 @@ Note, ElephantSQL has come to the end of its life now. So another provider will 
 3. Copy the ARN, create a bucket policy with `/*` at the end of the resource value, and save.
 4. Edit CORS configuration:
 
-    ```json
-    [
-        {
-            "AllowedHeaders": ["Authorization"],
-            "AllowedMethods": ["GET"],
-            "AllowedOrigins": ["*"],
-            "ExposeHeaders": []
-        }
-    ]
-    ```
+   ```json
+   [
+     {
+       "AllowedHeaders": ["Authorization"],
+       "AllowedMethods": ["GET"],
+       "AllowedOrigins": ["*"],
+       "ExposeHeaders": []
+     }
+   ]
+   ```
 
 5. Enable public access in the ACL section.
 
@@ -700,40 +700,40 @@ Note, ElephantSQL has come to the end of its life now. So another provider will 
 
 1. Install boto3 and django storages:
 
-    ```bash
-    pip3 install boto3 django-storages
-    pip3 freeze > requirements.txt
-    ```
+   ```bash
+   pip3 install boto3 django-storages
+   pip3 freeze > requirements.txt
+   ```
 
 2. Add `storages` to installed apps in settings.py.
 3. Add the following to settings.py:
 
-    ```python
-    if 'USE_AWS' in os.environ:
-        AWS_S3_OBJECT_PARAMETERS = {
-            'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
-            'CacheControl': 'max-age=9460800',
-        }
-        AWS_STORAGE_BUCKET_NAME = 'enter your bucket name here'
-        AWS_S3_REGION_NAME = 'enter the region you selected here'
-        AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
-        AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-        AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
-    ```
+   ```python
+   if 'USE_AWS' in os.environ:
+       AWS_S3_OBJECT_PARAMETERS = {
+           'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+           'CacheControl': 'max-age=9460800',
+       }
+       AWS_STORAGE_BUCKET_NAME = 'enter your bucket name here'
+       AWS_S3_REGION_NAME = 'enter the region you selected here'
+       AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+       AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+       AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+   ```
 
 4. Add AWS keys to Heroku config vars.
 5. Remove the DISABLE_COLLECTSTATIC variable.
 6. Create custom_storages.py for static and media file storage.
 7. Update settings.py for static and media files:
 
-    ```python
-    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
-    STATICFILES_LOCATION = 'static'
-    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
-    MEDIAFILES_LOCATION = 'media'
-    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
-    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
-    ```
+   ```python
+   STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+   STATICFILES_LOCATION = 'static'
+   DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+   MEDIAFILES_LOCATION = 'media'
+   STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+   MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+   ```
 
 8. Commit and push changes to deploy to Heroku. Verify static files in S3 bucket.
 9. Create a media folder in your S3 bucket.
@@ -744,48 +744,48 @@ Note, ElephantSQL has come to the end of its life now. So another provider will 
 2. Add the WebHook endpoint in Stripe and create the WebHook signing secret in Heroku config vars as `STRIPE_WH_SECRET`.
 3. Update settings.py:
 
-    ```python
-    STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
-    STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
-    STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
-    ```
+   ```python
+   STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
+   STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
+   STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
+   ```
 
 ## Technologies Used
 
 ### Languages Used
 
--   [HTML5](https://en.wikipedia.org/wiki/HTML5)
--   [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
--   [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
--   [JQuery](https://en.wikipedia.org/wiki/JQuery)
--   [Python](<https://en.wikipedia.org/wiki/Python_(programming_language)>>)
--   [Django](<https://en.wikipedia.org/wiki/Django_(web_framework)>>)
--   [SQLAlchemy](https://en.wikipedia.org/wiki/SQLAlchemy)
--   [PostgresSQL](https://en.wikipedia.org/wiki/PostgreSQL)
--   [AWS](https://en.wikipedia.org/wiki/Amazon_Web_Services)
+- [HTML5](https://en.wikipedia.org/wiki/HTML5)
+- [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+- [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
+- [JQuery](https://en.wikipedia.org/wiki/JQuery)
+- [Python](<https://en.wikipedia.org/wiki/Python_(programming_language)>>)
+- [Django](<https://en.wikipedia.org/wiki/Django_(web_framework)>>)
+- [SQLAlchemy](https://en.wikipedia.org/wiki/SQLAlchemy)
+- [PostgresSQL](https://en.wikipedia.org/wiki/PostgreSQL)
+- [AWS](https://en.wikipedia.org/wiki/Amazon_Web_Services)
 
 ### Frameworks, Libraries & Programs Used
 
--   [Bootstrap 4.4.1](https://getbootstrap.com/docs/4.4/getting-started/introduction/)
-    -   Bootstrap was used to assist with the responsiveness of all pages.
--   [Font Awesome](https://fontawesome.com/)
-    -   Font Awesome was for various icons throughout the site .
--   [Google Fonts](https://fonts.google.com/)
-    -   Google fonts were used to import the chosen fonts that were used throughout the webpages.
--   [Git](https://git-scm.com/)
-    -   Git was used for version control to commit to Git and Push to GitHub.
--   [GitHub](https://github.com/)
-    -   GitHub is used to store the project’s code after being pushed from Git.
--   [Gitpod (CI profile)](https://codeinstitute-ide.net/workspaces)
-    -   Gitpod was used as the IDE for developing the site and documentation.
--   [Figma](https://www.figma.com/login?is_not_gen_0=true)
-    -   Figma was used to complete further wireframes for mobile, tablet and desktop pages. Also the database table schema.
--   [Designer](https://designer.microsoft.com/)
-    -   Designer was used to create the logo and the images for the deals that are displayed on the homepage.
--   [Adobe Stock](https://stock.adobe.com/uk/)
-    -   Aodbe Stock as used to obtain the main background image on the homepage, images for the individual bottles of wine and the two images that are on the wine tasting page.
--   [Flatpickr](https://flatpickr.js.org/)
-    -   Flatpickr was used as the chosen datetime picker within the wine tasting booking form.
+- [Bootstrap 4.4.1](https://getbootstrap.com/docs/4.4/getting-started/introduction/)
+  - Bootstrap was used to assist with the responsiveness of all pages.
+- [Font Awesome](https://fontawesome.com/)
+  - Font Awesome was for various icons throughout the site .
+- [Google Fonts](https://fonts.google.com/)
+  - Google fonts were used to import the chosen fonts that were used throughout the webpages.
+- [Git](https://git-scm.com/)
+  - Git was used for version control to commit to Git and Push to GitHub.
+- [GitHub](https://github.com/)
+  - GitHub is used to store the project’s code after being pushed from Git.
+- [Gitpod (CI profile)](https://codeinstitute-ide.net/workspaces)
+  - Gitpod was used as the IDE for developing the site and documentation.
+- [Figma](https://www.figma.com/login?is_not_gen_0=true)
+  - Figma was used to complete further wireframes for mobile, tablet and desktop pages. Also the database table schema.
+- [Designer](https://designer.microsoft.com/)
+  - Designer was used to create the logo and the images for the deals that are displayed on the homepage.
+- [Adobe Stock](https://stock.adobe.com/uk/)
+  - Aodbe Stock as used to obtain the main background image on the homepage, images for the individual bottles of wine and the two images that are on the wine tasting page.
+- [Flatpickr](https://flatpickr.js.org/)
+  - Flatpickr was used as the chosen datetime picker within the wine tasting booking form.
 
 ## Code
 
@@ -795,8 +795,8 @@ Note, ElephantSQL has come to the end of its life now. So another provider will 
 
 ## Acknowledgements
 
--   Mitko Bachvarov - My Code Institute Mentor for helpful feedback.
+- Mitko Bachvarov - My Code Institute Mentor for helpful feedback.
 
--   Paul Bowers - My Course tutor for their useful tutorial sessions
+- Paul Bowers - My Course tutor for their useful tutorial sessions
 
--   Laura Gibbons - My partner for her user feedback
+- Laura Gibbons - My partner for her user feedback
