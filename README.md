@@ -758,8 +758,8 @@ Note, ElephantSQL has come to the end of its life now. So another provider will 
 - [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
 - [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
 - [JQuery](https://en.wikipedia.org/wiki/JQuery)
-- [Python](<https://en.wikipedia.org/wiki/Python_(programming_language)>>)
-- [Django](<https://en.wikipedia.org/wiki/Django_(web_framework)>>)
+- [Python](<https://en.wikipedia.org/wiki/Python_(programming_language)>)
+- [Django](<https://en.wikipedia.org/wiki/Django_(web_framework)>)
 - [SQLAlchemy](https://en.wikipedia.org/wiki/SQLAlchemy)
 - [PostgresSQL](https://en.wikipedia.org/wiki/PostgreSQL)
 - [AWS](https://en.wikipedia.org/wiki/Amazon_Web_Services)
@@ -791,7 +791,11 @@ Note, ElephantSQL has come to the end of its life now. So another provider will 
 
 ### Templates
 
-[Bootstrap Library](https://getbootstrap.com/docs/4.4/getting-started/introduction/ "link to Bootstrap Docs"): - Has been used through the project to assist with making the pages responsive. - I have used some template code from Bootstrap documentation, such as the forms, modals and navbar. - I have made amendments to these in order to suit the chosen design for the website.
+[Bootstrap Library](https://getbootstrap.com/docs/4.4/getting-started/introduction/ "link to Bootstrap Docs")
+
+- Has been used through the project to assist with making the pages responsive.
+- I have used some template code from Bootstrap documentation, such as the forms, modals and navbar.
+- I have made amendments to these in order to suit the chosen design for the website.
 
 ## Acknowledgements
 
